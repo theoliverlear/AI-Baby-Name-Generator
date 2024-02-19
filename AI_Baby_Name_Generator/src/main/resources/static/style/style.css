@@ -1,0 +1,211 @@
+/*----------------------General-Content-----------------------------*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url("https://shorturl.at/hjPQV");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/*-----------------------------Text---------------------------------*/
+h1 {
+    font-size: calc(((4vw + 4vh) / 2 + 16px));
+}
+h2 {
+    font-size: calc(((3vw + 3vh) / 2) + 14px);
+}
+h3 {
+    font-size: calc(((2.5vw + 2.5vh) / 2) + 12px);
+}
+h4 {
+    font-size: calc(((2vw + 2vh) / 2) + 10px);
+}
+p {
+    font-size: calc(((1.5vw + 1.5vh) / 2) + 8px);
+}
+hr {
+    width: 100%;
+    margin: calc((1vw + 1vh) / 2);
+}
+/*-------------------------Content-Stripe---------------------------*/
+.content-stripe {
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: bisque;
+    border-top: black solid calc((0.5vw + 0.5vh) / 2);
+    border-bottom: black solid calc((0.5vw + 0.5vh) / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc((5vw + 5vh) / 2);
+    box-shadow: black calc((1vw + 1vh) / 2)
+    calc((1vw + 1vh) / 2)
+    calc((1vw + 1vh) / 2);
+    transition: background-color 0.25s ease-in-out;
+}
+.content-stripe-text {
+    font-style: italic;
+    letter-spacing: calc((0.5vw + 0.5vh) / 2);
+    text-shadow: rgba(0, 0, 0, 0.4) calc((0.15vw + 0.15vh) / 2)
+    calc((0.15vw + 0.15vh) / 2)
+    calc((0.15vw + 0.15vh) / 2);
+    transition: letter-spacing 0.25s ease-in-out;
+}
+.content-stripe:hover {
+    background-color: black;
+    color: bisque;
+    border-top: bisque solid calc((0.5vw + 0.5vh) / 2);
+    border-bottom: bisque solid calc((0.5vw + 0.5vh) / 2);
+    transition: background-color 0.25s ease-in-out;
+}
+.content-stripe:hover .content-stripe-text  {
+    letter-spacing: calc((1vw + 1vh) / 2);
+    transition: letter-spacing 0.25s ease-in-out;
+}
+/*----------------------------Paragraphs----------------------------*/
+.paragraph-section {
+    width: calc((80vw + 80vh) / 2);
+    margin: calc((2vw + 2vh) / 2) 0;
+    background-color: black;
+    padding: calc((1vw + 1vh) / 2) calc((7vw + 7vh) / 2);
+    border-radius: calc((10vw + 10vh) / 2);
+    border: bisque solid calc((0.5vw + 0.5vh) / 2);
+    color: bisque;
+    box-shadow: black calc((.25vw + .25vh) / 2)
+    calc((.5vw + .5vh) / 2)
+    calc((.5vw + .5vh) / 2);
+    transition: box-shadow 0.25s ease-in-out;
+}
+.paragraph-section:hover {
+    box-shadow: black calc((.5vw + 0.5vh) / 2)
+    calc((1vw + 1vh) / 2)
+    calc((1vw + 1vh) / 2);
+    transition: box-shadow 0.25s ease-in-out;
+}
+.paragraph-text {
+    text-align: center;
+}
+/*--------------------------Intro-Section---------------------------*/
+#title-div {
+    text-align: center;
+    margin: calc((1.25vw + 1.25vh) / 2) 0 calc((1.5vw + 1.5vh) / 2) 0;
+    background-color: bisque;
+    padding: calc((1vw + 1vh) / 2) calc((7vw + 7vh) / 2);
+    border-radius: calc((10vw + 10vh) / 2);
+    border: #f1f1f1 solid calc((0.5vw + 0.5vh) / 2);
+    box-shadow: black calc((1vw + 1vh) / 2)
+    calc((1vw + 1vh) / 2)
+    calc((1vw + 1vh) / 2);
+    transition: background-color 0.25s ease-in-out;
+}
+#title-div:hover {
+    background-color: black;
+    border: bisque solid calc((0.5vw + 0.5vh) / 2);
+    transition: background-color 0.25s ease-in-out;
+}
+#title-div:hover #title {
+    color: #f1f1f1;
+    transition: color 0.25s ease-in-out;
+}
+#title {
+    font-style: italic;
+    letter-spacing: calc((0.5vw + 0.5vh) / 2);
+    color: black;
+    transition: color 0.25s ease-in-out;
+}
+#baby-logo {
+    width: calc((30vw + 30vh) / 2);
+    height: auto;
+    border-radius: 50%;
+    border: black solid calc((1vw + 1vh) / 2);
+    box-shadow: bisque calc((1vw + 1vh) / 2)
+    calc((1vw + 1vh) / 2)
+    calc((1vw + 1vh) / 2);
+    animation: radiate 8s linear infinite;
+}
+/*---------------------------Animations-----------------------------*/
+@keyframes radiate {
+    0% {
+        box-shadow: bisque calc((1vw + 1vh) / 2)
+        calc((1vw + 1vh) / 2)
+        calc((1vw + 1vh) / 2);
+    }
+    25% {
+        box-shadow: bisque calc((0.25vw + 0.25vh) / 2)
+        calc((0.5vw + 0.5vh) / 2)
+        calc((0.5vw + 0.5vh) / 2);
+    }
+    50% {
+        box-shadow: 0 0 0 calc((1vw + 1vh) / 2) bisque;
+    }
+    100% {
+        box-shadow: bisque calc((1vw + 1vh) / 2)
+        calc((1vw + 1vh) / 2)
+        calc((1vw + 1vh) / 2);
+    }
+}
+@keyframes soft-radiate {
+    0% {
+        box-shadow: bisque calc((0.5vw + 0.5vh) / 2)
+        calc((0.5vw + 0.5vh) / 2)
+        calc((1vw + 1vh) / 2);
+    }
+    25% {
+        box-shadow: bisque 0 calc((0.5vw + 0.5vh) / 2)
+        calc((0.5vw + 0.5vh) / 2);
+    }
+    50% {
+        box-shadow: 0 0 0 calc((0.1vw + 0.11vh) / 2) bisque;
+    }
+    100% {
+        box-shadow: bisque calc((0.5vw + 0.5vh) / 2)
+        calc((0.5vw + 0.5vh) / 2)
+        calc((1vw + 1vh) / 2);
+    }
+}
+@keyframes shift-shadow {
+    0% {
+        box-shadow: black calc((0.5vw + 0.5vh) / 2)
+        calc((1vw + 1vh) / 2)
+        calc((1vw + 1vh) / 2);
+    }
+    25% {
+        box-shadow: black calc((0.25vw + 0.25vh) / 2)
+        calc((1vw + 1vh) / 2)
+        calc((1vw + 1vh) / 2);
+    }
+    50% {
+        box-shadow: black 0 calc((1vw + 1vh) / 2)
+        calc((1vw + 1vh) / 2);
+    }
+    75% {
+        box-shadow: black calc((0.25vw + 0.25vh) / 2)
+        calc((1vw + 1vh) / 2)
+        calc((1vw + 1vh) / 2);
+    }
+    100% {
+        box-shadow: black calc((0.5vw + 0.5vh) / 2)
+        calc((1vw + 1vh) / 2)
+        calc((1vw + 1vh) / 2);
+    }
+}
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(calc((0.5vw + 0.5vh) / 2));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Proposal</title>
+    <style>
+        /*----------------------General-Content-----------------------------*/
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url("https://shorturl.at/hjPQV");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        /*-----------------------------Text---------------------------------*/
+        h1 {
+            font-size: calc((4vw + 4vh) / 2);
+        }
+        h2 {
+            font-size: calc((3vw + 3vh) / 2);
+        }
+        h3 {
+            font-size: calc((2.5vw + 2.5vh) / 2);
+        }
+        h4 {
+            font-size: calc((2vw + 2vh) / 2);
+        }
+        p {
+            font-size: calc((1.5vw + 1.5vh) / 2);
+        }
+        hr {
+            width: 100%;
+            margin: calc((1vw + 1vh) / 2);
+        }
+        .emphasise-text {
+            color: gray;
+            font-style: italic;
+            letter-spacing: calc((0.25vw + 0.25vh) / 2);
+            text-shadow: rgba(0, 0, 0, 0.2) calc((0.25vw + 0.25vh) / 2)
+            calc((0.25vw + 0.25vh) / 2)
+            calc((0.25vw + 0.25vh) / 2);
+            transition: text-shadow 0.25s ease-in-out;
+        }
+        .emphasise-text:hover {
+            color: bisque;
+            text-shadow: rgba(0, 0, 0, 0.8) calc((0.25vw + 0.25vh) / 2)
+            calc((0.25vw + 0.25vh) / 2)
+            calc((0.25vw + 0.25vh) / 2);
+            transition: text-shadow 0.25s ease-in-out;
+        }
+        /*-------------------------Content-Stripe---------------------------*/
+        .content-stripe {
+            margin: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: bisque;
+            border-top: black solid calc((0.5vw + 0.5vh) / 2);
+            border-bottom: black solid calc((0.5vw + 0.5vh) / 2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: calc((5vw + 5vh) / 2);
+            box-shadow: black calc((1vw + 1vh) / 2)
+                              calc((1vw + 1vh) / 2)
+                              calc((1vw + 1vh) / 2);
+            transition: background-color 0.25s ease-in-out;
+        }
+        .content-stripe-text {
+            font-style: italic;
+            letter-spacing: calc((0.5vw + 0.5vh) / 2);
+            text-shadow: rgba(0, 0, 0, 0.4) calc((0.15vw + 0.15vh) / 2)
+                                            calc((0.15vw + 0.15vh) / 2)
+                                            calc((0.15vw + 0.15vh) / 2);
+            transition: letter-spacing 0.25s ease-in-out;
+        }
+        .content-stripe:hover {
+            background-color: black;
+            color: bisque;
+            border-top: bisque solid calc((0.5vw + 0.5vh) / 2);
+            border-bottom: bisque solid calc((0.5vw + 0.5vh) / 2);
+            transition: background-color 0.25s ease-in-out;
+        }
+        .content-stripe:hover .content-stripe-text  {
+            letter-spacing: calc((1vw + 1vh) / 2);
+            transition: letter-spacing 0.25s ease-in-out;
+        }
+        /*----------------------------Paragraphs----------------------------*/
+        .paragraph-section {
+            width: calc((80vw + 80vh) / 2);
+            margin: calc((2vw + 2vh) / 2) 0;
+            background-color: black;
+            padding: calc((1vw + 1vh) / 2) calc((7vw + 7vh) / 2);
+            border-radius: calc((10vw + 10vh) / 2);
+            border: bisque solid calc((0.5vw + 0.5vh) / 2);
+            color: bisque;
+            box-shadow: black calc((.25vw + .25vh) / 2)
+            calc((.5vw + .5vh) / 2)
+            calc((.5vw + .5vh) / 2);
+            transition: box-shadow 0.25s ease-in-out;
+        }
+        .paragraph-section:hover {
+            box-shadow: black calc((.5vw + 0.5vh) / 2)
+            calc((1vw + 1vh) / 2)
+            calc((1vw + 1vh) / 2);
+            transition: box-shadow 0.25s ease-in-out;
+        }
+        .paragraph-text {
+            text-align: center;
+        }
+        /*--------------------------Intro-Section---------------------------*/
+        #title-div {
+            text-align: center;
+            margin: calc((1.25vw + 1.25vh) / 2) 0 calc((1.5vw + 1.5vh) / 2) 0;
+            background-color: bisque;
+            padding: calc((1vw + 1vh) / 2) calc((7vw + 7vh) / 2);
+            border-radius: calc((10vw + 10vh) / 2);
+            border: #f1f1f1 solid calc((0.5vw + 0.5vh) / 2);
+            box-shadow: black calc((1vw + 1vh) / 2)
+            calc((1vw + 1vh) / 2)
+            calc((1vw + 1vh) / 2);
+            transition: background-color 0.25s ease-in-out;
+        }
+        #title-div:hover {
+            background-color: black;
+            border: bisque solid calc((0.5vw + 0.5vh) / 2);
+            transition: background-color 0.25s ease-in-out;
+        }
+        #title-div:hover #title {
+            color: #f1f1f1;
+            transition: color 0.25s ease-in-out;
+        }
+        #title {
+            font-style: italic;
+            letter-spacing: calc((0.5vw + 0.5vh) / 2);
+            color: black;
+            transition: color 0.25s ease-in-out;
+        }
+        #baby-logo {
+            width: calc((30vw + 30vh) / 2);
+            height: auto;
+            border-radius: 50%;
+            border: black solid calc((1vw + 1vh) / 2);
+            box-shadow: bisque calc((1vw + 1vh) / 2)
+            calc((1vw + 1vh) / 2)
+            calc((1vw + 1vh) / 2);
+            animation: radiate 8s linear infinite;
+        }
+        /*-------------------------Tech-Section-----------------------------*/
+        .tech-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: calc((1vw + 1vh) / 2);
+            width: calc((20vw + 20vh) / 2);
+        }
+        .tech-logo {
+            width: calc((10vw + 10vh) / 2);
+            height: auto;
+            padding: calc((1vw + 1vh) / 2);
+            border-radius: 50%;
+            border: bisque solid calc((0.5vw + 0.5vh) / 2);
+            box-shadow: bisque calc((1vw + 1vh) / 2)
+                               calc((1vw + 1vh) / 2)
+                               calc((1vw + 1vh) / 2);
+            animation: soft-radiate 5s linear infinite;
+        }
+        .tech-text {
+            letter-spacing: calc((0.5vw + 0.5vh) / 2);
+            font-style: italic;
+            color: #f1f1f1;
+        }
+        #technologies-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: calc((80vw + 80vh) / 2);
+            margin: calc((1vw + 1vh) / 2) 0 calc((1.5vw + 1.5vh) / 2) 0;
+        }
+        .stack-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: black;
+            border-radius: calc((10vw + 10vh) / 2);
+            padding: calc((1vw + 1vh) / 2) calc((1vw + 1vh) / 2);
+            border: bisque solid calc((0.5vw + 0.5vh) / 2);
+            box-shadow: black calc((.25vw + .25vh) / 2)
+                              calc((.5vw + .5vh) / 2)
+                              calc((.5vw + .5vh) / 2);
+        }
+        .stack-type-div {
+            margin: calc((1.5vw + 1.5vh) / 2) 0;
+            padding: 0 calc((1vw + 1vh) / 2);
+            border-radius: calc((10vw + 10vh) / 2);
+            border: #f1f1f1 solid calc((0.5vw + 0.5vh) / 2);
+            background-color: #f1f1f1;
+            color: black;
+            box-shadow: black calc((0.5vw + 0.5vh) / 2)
+                              calc((1vw + 1vh) / 2)
+                              calc((1vw + 1vh) / 2);
+            animation: shift-shadow 6s linear infinite;
+        }
+        /*--------------------------Goals-Section---------------------------*/
+        #goals-section {
+            width: 75vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: black solid calc((0.5vw + 0.5vh) / 2);
+            border-radius: calc((10vw + 10vh) / 2);
+            background-color: black;
+            box-shadow: bisque calc((1vw + 1vh) / 2)
+                               calc((1vw + 1vh) / 2)
+                               calc((1vw + 1vh) / 2);
+            margin: calc((1.5vw + 1.5vh) / 2) 0;
+            padding: calc((1vw + 1vh) / 2) 0;
+        }
+        .goal-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: calc((0.5vw + 0.5vh) / 2);
+            width: calc((50vw + 50vh) / 2);
+            padding: 0 calc((1vw + 1vh) / 2);
+            background-color: #f1f1f1;
+            box-shadow: gray calc((0.25vw + 0.25vh) / 2)
+                             calc((0.25vw + 0.25vh) / 2)
+                             calc((0.25vw + 0.25vh) / 2);
+            border: gray solid calc((0.25vw + 0.25vh) / 2);
+            border-radius: calc((50vw + 50vh) / 2);
+            color: black;
+            animation: float 5s cubic-bezier(0, .37, .69, .99) infinite;
+        }
+        /*----------------------Customers-Stakeholders----------------------*/
+        #customers-stakeholders-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 75vw;
+            margin: 0 0 calc((1vw + 1vh) / 2) 0;
+        }
+        #customers-stakeholders-section .paragraph-section {
+            margin: calc((1vw + 1vh) / 2) 0;
+        }
+        .customer-stakeholder-title-div {
+            width: calc((20vw + 20vh) / 2);
+            margin: calc((1vw + 1vh) / 2);
+            padding: 0 calc((1vw + 1vh) / 2);
+            background-color: #f1f1f1;
+            box-shadow: black calc((0.5vw + 0.5vh) / 2)
+                              calc((0.5vw + 0.5vh) / 2)
+                              calc((1vw + 1vh) / 2);
+            border: black solid calc((0.5vw + 0.5vh) / 2);
+            border-radius: calc((50vw + 50vh) / 2);
+            color: black;
+        }
+        #customers-section, #stakeholders-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 75vw;
+            margin: calc((1vw + 1vh) / 2) 0 0 0;
+            border-radius: calc((10vw + 10vh) / 2);
+        }
+        .customer-stakeholder-img {
+            width: calc((10vw + 10vh) / 2);
+            height: auto;
+            border-radius: 50%;
+            border: black solid calc((0.5vw + 0.5vh) / 2);
+            box-shadow: black calc((0.5vw + 0.5vh) / 2)
+                              calc((0.5vw + 0.5vh) / 2)
+                              calc((1vw + 1vh) / 2);
+            background-color: #FFFFFF;
+            margin-left: calc((30vw + 30vh) / 2);
+        }
+        .customers-stakeholders-title-img-div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 75vw;
+        }
+        /*--------------------------Scope-Section---------------------------*/
+        #scope-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 75vw;
+            margin: calc((1vw + 1vh) / 2) 0;
+        }
+        .scope-title-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: calc((0.5vw + 0.5vh) / 2);
+            width: calc((50vw + 50vh) / 2);
+            padding: 0 calc((1vw + 1vh) / 2);
+            background-color: #f1f1f1;
+            box-shadow: gray calc((0.25vw + 0.25vh) / 2)
+            calc((0.25vw + 0.25vh) / 2)
+            calc((0.25vw + 0.25vh) / 2);
+            border: gray solid calc((0.25vw + 0.25vh) / 2);
+            border-radius: calc((50vw + 50vh) / 2);
+            color: black;
+        }
+        /*---------------------------Animations-----------------------------*/
+        @keyframes radiate {
+            0% {
+                box-shadow: bisque calc((1vw + 1vh) / 2)
+                                   calc((1vw + 1vh) / 2)
+                                   calc((1vw + 1vh) / 2);
+            }
+            25% {
+                box-shadow: bisque calc((0.25vw + 0.25vh) / 2)
+                                   calc((0.5vw + 0.5vh) / 2)
+                                   calc((0.5vw + 0.5vh) / 2);
+            }
+            50% {
+                box-shadow: 0 0 0 calc((1vw + 1vh) / 2) bisque;
+            }
+            100% {
+                box-shadow: bisque calc((1vw + 1vh) / 2)
+                                   calc((1vw + 1vh) / 2)
+                                   calc((1vw + 1vh) / 2);
+            }
+        }
+        @keyframes soft-radiate {
+            0% {
+                box-shadow: bisque calc((0.5vw + 0.5vh) / 2)
+                                   calc((0.5vw + 0.5vh) / 2)
+                                   calc((1vw + 1vh) / 2);
+            }
+            25% {
+                box-shadow: bisque 0 calc((0.5vw + 0.5vh) / 2)
+                                     calc((0.5vw + 0.5vh) / 2);
+            }
+            50% {
+                box-shadow: 0 0 0 calc((0.1vw + 0.11vh) / 2) bisque;
+            }
+            100% {
+                box-shadow: bisque calc((0.5vw + 0.5vh) / 2)
+                                   calc((0.5vw + 0.5vh) / 2)
+                                   calc((1vw + 1vh) / 2);
+            }
+        }
+        @keyframes shift-shadow {
+            0% {
+                box-shadow: black calc((0.5vw + 0.5vh) / 2)
+                                  calc((1vw + 1vh) / 2)
+                                  calc((1vw + 1vh) / 2);
+            }
+            25% {
+                box-shadow: black calc((0.25vw + 0.25vh) / 2)
+                                  calc((1vw + 1vh) / 2)
+                                  calc((1vw + 1vh) / 2);
+            }
+            50% {
+                box-shadow: black 0 calc((1vw + 1vh) / 2)
+                                    calc((1vw + 1vh) / 2);
+            }
+            75% {
+                box-shadow: black calc((0.25vw + 0.25vh) / 2)
+                                  calc((1vw + 1vh) / 2)
+                                  calc((1vw + 1vh) / 2);
+            }
+            100% {
+                box-shadow: black calc((0.5vw + 0.5vh) / 2)
+                                  calc((1vw + 1vh) / 2)
+                                  calc((1vw + 1vh) / 2);
+            }
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(calc((0.5vw + 0.5vh) / 2));
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<!-------------------------------Introduction-------------------------------->
+<div id="title-div">
+    <h1 id="title">AI Baby Name Generator</h1>
+</div>
+<img id="baby-logo" src="https://shorturl.at/jzQR0" alt="baby icon">
+<!---------------------------------Summary----------------------------------->
+<section class="paragraph-section">
+    <p class="paragraph-text">
+        The days of picking baby names from movies and TV shows, or even
+        family members, is over! It's finally time to use artificial
+        intelligence as it was meant for -- generating baby names! This app
+        will use OpenAI to help you name your child based on a number of
+        factors. You can choose between boy names, girl names, or unisex names
+        which can be filtered by nationality, popularity, uniqueness, and
+        preferred names! So what are you waiting for? Name your child today
+        with the AI Baby Name Generator!
+    </p>
+</section>
+<!----------------------------------Goals------------------------------------>
+<div class="content-stripe">
+    <h2 class="content-stripe-text">Goals</h2>
+</div>
+<section id="goals-section">
+    <!-----------------------------Utilize-AI-------------------------------->
+    <div class="goal-div">
+        <h4>
+            Utilize creative AI to
+            <u class="emphasise-text">
+                generate baby names.
+            </u>
+        </h4>
+    </div>
+    <hr />
+    <!--------------------------Provide-Interface---------------------------->
+    <div class="goal-div">
+        <h4>
+            Provide an
+            <u class="emphasise-text">interface</u>
+            with AI.
+        </h4>
+    </div>
+    <hr />
+    <!--------------------------Save-Favorites------------------------------->
+    <div class="goal-div">
+        <h4>
+            <u class="emphasise-text">Save</u>
+            favorite names to a database.
+        </h4>
+    </div>
+    <hr />
+    <!--------------------------Allow-Customization-------------------------->
+    <div class="goal-div">
+        <h4>
+            Allow
+            <u class="emphasise-text">customization</u>
+            with user options.
+        </h4>
+    </div>
+    <hr />
+    <!-------------------------Provide-Unique-Names-------------------------->
+    <div class="goal-div">
+        <h4>Provide the world with a
+            <u class="emphasise-text">new era of names.</u>
+        </h4>
+    </div>
+</section>
+<!------------------------Customers-And-Stakeholders------------------------->
+<div class="content-stripe">
+    <h2 class="content-stripe-text">Customers and Stakeholders</h2>
+</div>
+<section id="customers-stakeholders-section">
+    <!-----------------------------Customers--------------------------------->
+    <section id="customers-section">
+        <!-----------------------Title-And-Image----------------------------->
+        <div class="customers-stakeholders-title-img-div">
+            <div id="customers-title-div"
+                 class="customer-stakeholder-title-div">
+                <h2 id="customers-title">Customers</h2>
+            </div>
+            <img class="customer-stakeholder-img"
+                 src="https://shorturl.at/VW135"
+                 alt="customer icon">
+        </div>
+        <!----------------------Customer-Paragraph--------------------------->
+        <section class="paragraph-section">
+            <p class="paragraph-text">
+                The customers of this app will be expecting parents who are
+                looking for a unique name for their child. They will be able
+                to choose from a variety of options to customize their search
+                for the perfect name. They may use our service to create a
+                memorable name for their child -- perhaps even a name that has
+                never been used before!
+            </p>
+        </section>
+    </section>
+    <!-----------------------------Stakeholders------------------------------>
+    <section id="stakeholders-section">
+        <!-----------------------Title-And-Image----------------------------->
+        <div class="customers-stakeholders-title-img-div">
+            <div id="stakeholders-title-div"
+                 class="customer-stakeholder-title-div">
+                <h2 id="stakeholders-title">Stakeholders</h2>
+            </div>
+            <img class="customer-stakeholder-img"
+                 src="https://shorturl.at/xC347"
+                 alt="stakeholder icon">
+        </div>
+        <!---------------------Stakeholder-Paragraph------------------------->
+        <section class="paragraph-section">
+            <p class="paragraph-text">
+                The stakeholders of this app will be the developers and
+                investors. The developers will be responsible for creating the
+                app and maintaining it. The investors will be responsible for
+                funding the app and ensuring that it is profitable. This app
+                could be a profitable endeavor if structured properly. Since
+                the app is a program which is based on OpenAI API, a paid
+                service, it would be necessary to charge either on a per-use
+                basis or via a subscription model. With this being said, this
+                project would easily be a profitable endeavor.
+            </p>
+        </section>
+    </section>
+</section>
+<!-------------------------------Technologies-------------------------------->
+<div class="content-stripe">
+    <h2 class="content-stripe-text">Technologies</h2>
+</div>
+<div id="technologies-div">
+    <!------------------------------Front-End-------------------------------->
+    <div class="stack-type-div">
+        <h3>Front-End</h3>
+    </div>
+    <section class="stack-section">
+        <!---------------------------HTML------------------------------------>
+        <div class="tech-div">
+            <h4 class="tech-text">HTML</h4>
+            <img class="tech-logo"
+                 src="https://shorturl.at/ah578"
+                 alt="html logo">
+        </div>
+        <!-----------------------------CSS----------------------------------->
+        <div class="tech-div">
+            <h4 class="tech-text">CSS</h4>
+            <img class="tech-logo"
+                 src="https://shorturl.at/pJMOQ"
+                 alt="css logo">
+        </div>
+        <!---------------------------JavaScript------------------------------>
+        <div class="tech-div">
+            <h4 class="tech-text">JavaScript</h4>
+            <img class="tech-logo"
+                 src="https://shorturl.at/bmstP"
+                 alt="javascript logo">
+        </div>
+    </section>
+    <!------------------------------Back-End--------------------------------->
+    <div class="stack-type-div">
+        <h3>Back-End</h3>
+    </div>
+    <section class="stack-section">
+        <!-----------------------------Java---------------------------------->
+        <div class="tech-div">
+            <h4 class="tech-text">Java</h4>
+            <img class="tech-logo"
+                 src="https://shorturl.at/quN57"
+                 alt="java logo">
+        </div>
+        <!---------------------------Thymeleaf------------------------------->
+        <div class="tech-div">
+            <h4 class="tech-text">Thymeleaf</h4>
+            <img class="tech-logo"
+                 src="https://shorturl.at/cjnAD"
+                 alt="thymeleaf logo">
+        </div>
+        <!---------------------------Spring---------------------------------->
+        <div class="tech-div">
+            <h4 class="tech-text">Java Spring</h4>
+            <img class="tech-logo"
+                 src="https://shorturl.at/fuP45"
+                 alt="java spring logo">
+        </div>
+        <!--------------------------H2-Database------------------------------>
+        <div class="tech-div">
+            <h4 class="tech-text">H2 SQL Database</h4>
+            <img class="tech-logo"
+                 src="https://shorturl.at/bckPY"
+                 alt="h2 logo">
+        </div>
+    </section>
+    <!-------------------------------Services-------------------------------->
+    <div class="stack-type-div">
+        <h3>Services</h3>
+    </div>
+    <section class="stack-section">
+        <!--------------------------OpenAI-API------------------------------->
+        <div class="tech-div">
+            <h4 class="tech-text">OpenAI API</h4>
+            <img class="tech-logo"
+                 src="https://shorturl.at/CFJSW"
+                 alt="openai logo">
+        </div>
+        <!----------------------------HTTPS---------------------------------->
+        <div class="tech-div">
+            <h4 class="tech-text">HTTPS</h4>
+            <img class="tech-logo"
+                 src="https://shorturl.at/eI057"
+                 alt="https logo">
+        </div>
+    </section>
+</div>
+<!----------------------------------Scope------------------------------------>
+<div class="content-stripe">
+    <h2 class="content-stripe-text">Scope</h2>
+</div>
+<section id="scope-section">
+    <!----------------------------Feasibility-------------------------------->
+    <section class="paragraph-section">
+        <p class="paragraph-text">
+            I believe that this project is feasible and can be completed over
+            the course of a semester. This project may be oriented for the
+            more advanced programmers who have a good familiarity with the
+            technologies. Having all this makes this project feasible. The
+            project will be broken down into three major sections which will
+            be completed in order while having some double-dipping along the
+            way.
+        </p>
+    </section>
+    <hr />
+    <!--------------------------HTTPS-Requests------------------------------->
+    <div class="scope-title-div">
+        <h4 class="scope-title-text">Step 1: HTTPS Requests in Java</h4>
+    </div>
+    <section class="paragraph-section">
+        <p class="paragraph-text">
+            The first step will be to create a simple web app which can make
+            HTTPS requests to the OpenAI API. This will be done using Java and
+            would be a simple beginning to the project. This step would build
+            the model for the project and would be the foundation for the
+            rest of the project. This step may be completed quickly for those
+            who are experienced with Java and HTTPS requests.
+        </p>
+    </section>
+    <hr />
+    <!--------------------------Web-User-Interface--------------------------->
+    <div class="scope-title-div">
+        <h4 class="scope-title-text">Step 2: Web User Interface</h4>
+    </div>
+    <section class="paragraph-section">
+        <p class="paragraph-text">
+            The second step will be to create a user interface which will
+            allow the user to input their preferences for the baby name. This
+            will be done using HTML, CSS, and JavaScript. This will start to
+            connect the back-end to the front-end. This may take a plurality
+            of time to complete. Server-side programming will be used to
+            connect the front-end to the back-end via Thymeleaf and Java
+            Spring. For those who have built web severs before, this step may
+            be translatable from other languages.
+        </p>
+    </section>
+    <hr />
+    <!----------------------------Persistence-------------------------------->
+    <div class="scope-title-div">
+        <h4 class="scope-title-text">Step 3: Persistence</h4>
+    </div>
+    <section class="paragraph-section">
+        <p class="paragraph-text">
+            The third step will be to create a database which will store the
+            user's favorite names. This will be done using H2 SQL Database.
+            This will allow the user to save their favorite names for later
+            use. This step will involve securely making user accounts and
+            storing user data with the safety of HTTPS/SSL and encryption. For
+            people experienced with databases and encryption, this step may be
+            completed faster than the previous step.
+        </p>
+    </section>
+</section>
+</body>
+</html>
