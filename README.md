@@ -1,24 +1,7 @@
 # AI Baby Name Generator
 
 ---
-<style>
-        #baby-logo {
-            width: calc((30vw + 30vh) / 2);
-            height: auto;
-            border-radius: 50%;
-            border: black solid calc((1vw + 1vh) / 2);
-            calc((1vw + 1vh) / 2)
-            calc((1vw + 1vh) / 2);
-        }
-        .customer-stakeholder-img {
-            width: calc((10vw + 10vh) / 2);
-            height: auto;
-            border-radius: 50%;
-            border: black solid calc((0.5vw + 0.5vh) / 2);
-            background-color: #FFFFFF;
-        }
-</style>
-<img id="baby-logo" src="https://shorturl.at/jzQR0" alt="baby icon">
+<img id="baby-logo" src="https://shorturl.at/jzQR0" alt="baby icon" style="width: calc((30vw + 30vh) / 2); height: auto; border-radius: 50%; border: black solid calc((1vw + 1vh) / 2); calc((1vw + 1vh) / 2) calc((1vw + 1vh) / 2);">
 
 ## Summary
 
@@ -42,7 +25,7 @@ today with the AI Baby Name Generator!
 
 ### Customers
 
-<img class="customer-stakeholder-img" src="https://shorturl.at/VW135" alt="customer icon">
+<img class="customer-stakeholder-img" src="https://shorturl.at/VW135" alt="customer icon" style="width: calc((10vw + 10vh) / 2); height: auto; border-radius: 50%; border: black solid calc((0.5vw + 0.5vh) / 2); background-color: #FFFFFF;">
 
 The customers of this app will be expecting parents who are looking for a 
 unique name for their child. They will be able to choose from a variety of 
@@ -52,7 +35,7 @@ that has never been used before!
 
 ### Stakeholders
 
-<img class="customer-stakeholder-img" src="https://shorturl.at/xC347" alt="stakeholder icon">
+<img class="customer-stakeholder-img" src="https://shorturl.at/xC347" alt="stakeholder icon" style="width: calc((10vw + 10vh) / 2); height: auto; border-radius: 50%; border: black solid calc((0.5vw + 0.5vh) / 2); background-color: #FFFFFF;">
 
 The stakeholders of this app will be the developers and investors. The
 developers will be responsible for creating the app and maintaining it. The 
