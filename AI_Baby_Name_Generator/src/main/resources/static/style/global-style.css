@@ -1,3 +1,9 @@
+:root {
+    --primary-white: #f1f1f1;
+    --primary-black: black;
+    --primary-bisque: bisque;
+
+}
 /*----------------------General-Content-----------------------------*/
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -26,6 +32,9 @@ h3 {
 }
 h4 {
     font-size: calc(((2vw + 2vh) / 2) + 10px);
+}
+h5 {
+    font-size: calc(((1.75vw + 1.75vh) / 2) + 8px);
 }
 p {
     font-size: calc(((1.5vw + 1.5vh) / 2) + 8px);
@@ -93,6 +102,27 @@ hr {
 }
 .paragraph-text {
     text-align: center;
+}
+/*------------------------Generate-Now-Button-----------------------*/
+#generate-now-div {
+    background-color: black;
+    color: bisque;
+    padding: calc((0.25vw + 0.25vh) / 2) calc((5vw + 5vh) / 2);
+    border-radius: calc((5vw + 5vh) / 2);
+    margin: 2vh 0 0 0;
+    box-shadow: #f1f1f1 calc((0.5vw + 0.5vh) / 2) calc((1vw + 1vh) / 2);
+    transition: box-shadow 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+#generate-now-div:hover {
+    color: #f1f1f1;
+    box-shadow: #f1f1f1 calc((1vw + 1vh) / 2) calc((2vw + 2vh) / 2);
+    transition: box-shadow 0.25s ease-in-out;
+    cursor: pointer;
+}
+#generate-now-text {
+    font-size: calc(((2vw + 2vh) / 2) + 10px);
+    letter-spacing: calc((0.5vw + 0.5vh) / 2);
+    transition: letter-spacing 0.25s ease-in-out;
 }
 /*--------------------------Intro-Section---------------------------*/
 #title-div {
