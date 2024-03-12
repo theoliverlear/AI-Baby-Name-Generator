@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Baby Name Generator</title>
+    <link rel="stylesheet" href="../static/style/generate-style.css">
+    <link rel="stylesheet" href="../static/style/global-style.css">
+</head>
+<body>
+<main>
+
+</main>
+<section id="generated-name-section">
+    <div id="generated-name-title-div">
+        <h2 id="generated-name-text">Generated Name</h2>
+    </div>
+    <div id="generated-name-div">
+        <h4 id="generated-name">...</h4>
+    </div>
+</section>
+<section id="generator-settings">
+    <h3 id="generator-settings-text">Generator Settings</h3>
+    <div id="generator-settings-div">
+        <div id="generator-gender-div">
+            <h5>Gender</h5>
+            <input id="boy" name="gender" type="radio">
+            <label for="boy">Boy</label>
+            <input id="girl" name="gender" type="radio">
+            <label for="girl">Girl</label>
+            <input id="unisex" name="gender" type="radio">
+            <label for="unisex">Unisex</label>
+            <input id="non-binary" name="gender" type="radio">
+            <label for="non-binary">Non-Binary</label>
+            <input id="other" name="gender" type="radio">
+            <label for="other">Other</label>
+        </div>
+        <div>
+            <h5>Nationality</h5>
+            <p id="nationality-example-text">Ex. Spanish, American, South African, Irish American</p>
+            <input id="nationality-input" type="text">
+        </div>
+        <div>
+            <h5>Uniqueness</h5>
+            <input id="uniqueness-input" type="range" min="1" max="10">
+        </div>
+        <div>
+            <h5>Last Name</h5>
+            <input id="last-name-input" type="text">
+        </div>
+        <div>
+            <h5>Popularity</h5>
+            <input id="popularity-input" type="range" min="1" max="10">
+        </div>
+        <div>
+            <h5>Number of Names</h5>
+            <input id="number-of-names-input" type="range" min="1" max="10">
+        </div>
+        <div>
+            <h5>Length of Names</h5>
+            <input id="length-of-names-input" type="range" min="1" max="10">
+        </div>
+    </div>
+</section>
+</body>
+</html>
