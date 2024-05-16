@@ -1,8 +1,9 @@
-package org.theoliverlear;
+package org.theoliverlear.model.deprecated;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Deprecated
 public class Name {
     //=============================-Variables-================================
     String name;
