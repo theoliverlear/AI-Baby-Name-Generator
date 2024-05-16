@@ -1,8 +1,9 @@
-package org.theoliverlear;
+package org.theoliverlear.model.deprecated;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+@Deprecated
 public class Main {
     public static ArrayList<String> getNameList(String prompt) {
         Scanner userInput = new Scanner(System.in);
@@ -34,7 +35,7 @@ public class Main {
         float uniqueness = Float.parseFloat(getUserInput("Enter the uniqueness out of 1.0:"));
         String lastName = getUserInput("Enter the last name:");
         boolean includeLastName = Boolean.parseBoolean(getUserInput("Include the last name? (true/false)"));
-        ApiNameRequest apiNameRequest = new ApiNameRequest(new AiModel(AiModelType.GPT_TURBO),
+        ApiNameRequest apiNameRequest = new ApiNameRequest(new AiModel(AiModelType.GPT_4),
                                                            gender,
                                                            nationality,
                                                            similarNames,
