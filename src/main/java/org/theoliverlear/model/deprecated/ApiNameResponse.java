@@ -1,5 +1,6 @@
-package org.theoliverlear;
+package org.theoliverlear.model.deprecated;
 
+@Deprecated
 public class ApiNameResponse {
     String response;
     //============================-Constructors-==============================
