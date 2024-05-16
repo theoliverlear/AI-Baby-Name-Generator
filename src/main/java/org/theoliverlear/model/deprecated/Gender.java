@@ -1,5 +1,6 @@
-package org.theoliverlear;
+package org.theoliverlear.model.deprecated;
 
+@Deprecated
 public enum Gender {
     BOY("Boy", 'B'),
     GIRL("Girl", 'G'),
