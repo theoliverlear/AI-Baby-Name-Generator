@@ -1,4 +1,4 @@
-package org.theoliverlear;
+package org.theoliverlear.model.deprecated;
 //=================================-Imports-==================================
 import java.io.IOException;
 import java.net.URI;
@@ -7,6 +7,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 
+@Deprecated
 public class ApiNameRequest {
     //=============================-Variables-================================
     AiModel model;
@@ -80,6 +81,7 @@ public class ApiNameRequest {
                 }""".formatted(model, prompt, maxTokens, temperature);
         // Send request to OpenAI
         HttpClient httpClient = HttpClient.newHttpClient();
+        System.out.println("API KEY IS: " + this.apiKey);
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .setHeader("Content-Type", "application/json")
@@ -104,9 +106,7 @@ public class ApiNameRequest {
         this.name = name.getName();
     }
     public void initializeApiKey() {
-        String relativePath = "static/key/open_ai_key.txt";
-        FileLineRetriever fileLineRetriever = new FileLineRetriever(0, relativePath);
-        this.apiKey = fileLineRetriever.getData();
+        String environmentKey = System.getenv("OPENAI_KEY");
     }
 
     //=============================-Getters-==================================
