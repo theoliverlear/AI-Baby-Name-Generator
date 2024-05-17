@@ -1,10 +1,8 @@
-:root {
-    --primary-white: #f1f1f1;
-    --primary-black: black;
-    --primary-bisque: bisque;
+@import "global-variables";
 
-}
-/*----------------------General-Content-----------------------------*/
+/*=================================-Styles-=================================*/
+
+/*-----------------------------General-Content------------------------------*/
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f1f1f1;
@@ -15,33 +13,75 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-image: url("https://shorturl.at/hjPQV");
+    background-image: $background-image;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-/*-----------------------------Text---------------------------------*/
+/*-----------------------------------Text-----------------------------------*/
 h1 {
     font-size: calc(((4vw + 4vh) / 2 + 16px));
+    margin: 0;
+    padding: 0;
 }
 h2 {
     font-size: calc(((3vw + 3vh) / 2) + 14px);
+    margin: 0;
+    padding: 0;
 }
 h3 {
     font-size: calc(((2.5vw + 2.5vh) / 2) + 12px);
+    margin: 0;
+    padding: 0;
 }
 h4 {
     font-size: calc(((2vw + 2vh) / 2) + 10px);
+    margin: 0;
+    padding: 0;
 }
 h5 {
     font-size: calc(((1.75vw + 1.75vh) / 2) + 8px);
+    margin: 0;
+    padding: 0;
+}
+h6 {
+    font-size: calc(((1.5vw + 1.5vh) / 2) + 8px);
+    margin: 0;
+    padding: 0;
 }
 p {
     font-size: calc(((1.5vw + 1.5vh) / 2) + 8px);
+    margin: 0;
+    padding: 0;
 }
 hr {
     width: 100%;
-    margin: calc((1vw + 1vh) / 2);
+    margin: calc(((1vw + 1vh) / 2) + 0.5em);
+}
+/*---------------------------------Buttons----------------------------------*/
+.button {
+    background-color: $primary-black;
+    color: $primary-white;
+    padding: $half-percent $quarter-percent;
+    margin: $eighth-percent;
+    transition: background-color, color, 0.25s ease-in-out;
+    border : {
+        radius: $five-percent;
+    }
+    &:hover {
+        background-color: $soft-blue;
+        color: $primary-black;
+        border: $primary-bisque solid $very-thin-border;
+    }
+    &:active {
+        background-color: $primary-bisque;
+        color: $primary-black;
+        border: $primary-black solid $very-thin-border;
+    }
+}
+.medium-button {
+    @extend .button;
+    padding: $one-percent $none;
 }
 /*-------------------------Content-Stripe---------------------------*/
 .content-stripe {
@@ -70,10 +110,10 @@ hr {
     transition: letter-spacing 0.25s ease-in-out;
 }
 .content-stripe:hover {
-    background-color: black;
-    color: bisque;
-    border-top: bisque solid calc((0.5vw + 0.5vh) / 2);
-    border-bottom: bisque solid calc((0.5vw + 0.5vh) / 2);
+    background-color: $primary-black;
+    color: $primary-bisque;
+    border-top: $primary-bisque solid calc((0.5vw + 0.5vh) / 2);
+    border-bottom: $primary-bisque solid calc((0.5vw + 0.5vh) / 2);
     transition: background-color 0.25s ease-in-out;
 }
 .content-stripe:hover .content-stripe-text  {
