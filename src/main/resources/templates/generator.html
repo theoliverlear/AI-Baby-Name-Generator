@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>AI Baby Name Generator</title>
-    <link rel="stylesheet" href="../static/style/generator-style.css">
-    <link rel="stylesheet" href="../static/style/global-style.css">
+    <link rel="stylesheet" href="../static/style/generator-style.css"
+          th:href="@{/style/generator-style.css}">
+    <link rel="stylesheet" href="../static/style/global-style.css"
+            th:href="@{/style/global-style.css}">
 </head>
 <body>
 <main>
@@ -17,49 +19,67 @@
     <div id="generated-name-div">
         <h4 id="generated-name">...</h4>
     </div>
+    <div id="generate-name-button-div" class="medium-button">
+        <h4 id="generate-name-button">Generate Name</h4>
+    </div>
 </section>
 <section id="generator-settings">
     <h3 id="generator-settings-text">Generator Settings</h3>
     <div id="generator-settings-div">
-        <div id="generator-gender-div">
+        <div id="generator-gender-div" class="name-input-div">
             <h5>Gender</h5>
-            <input id="boy" name="gender" type="radio">
+            <input class="gender-input" id="any" name="gender" type="radio" checked>
+            <label for="any">Any</label>
+            <input class="gender-input" id="boy" name="gender" type="radio">
             <label for="boy">Boy</label>
-            <input id="girl" name="gender" type="radio">
+            <input class="gender-input" id="girl" name="gender" type="radio">
             <label for="girl">Girl</label>
-            <input id="unisex" name="gender" type="radio">
+            <input class="gender-input" id="unisex" name="gender" type="radio">
             <label for="unisex">Unisex</label>
-            <input id="non-binary" name="gender" type="radio">
+            <input class="gender-input" id="non-binary" name="gender" type="radio">
             <label for="non-binary">Non-Binary</label>
-            <input id="other" name="gender" type="radio">
+            <input class="gender-input" id="other" name="gender" type="radio">
             <label for="other">Other</label>
         </div>
-        <div>
+        <div class="name-input-div">
             <h5>Nationality</h5>
             <p id="nationality-example-text">Ex. Spanish, American, South African, Irish American</p>
             <input id="nationality-input" type="text">
         </div>
-        <div>
+        <div class="name-input-div">
+            <h5>Similar names </h5>
+            <p>Separate by comma ","</p>
+            <input id="similar-names-input" type="text">
+        </div>
+        <div class="name-input-div">
+            <h5>Dissimilar Names</h5>
+            <p>Separate by comma ","</p>
+            <input id="dissimilar-names-input" type="text">
+        </div>
+        <div class="name-input-div">
             <h5>Uniqueness</h5>
             <input id="uniqueness-input" type="range" min="1" max="10">
         </div>
-        <div>
+        <div class="name-input-div">
+            <h5>Complexity</h5>
+            <input id="complexity-input" type="range" min="1" max="10">
+        </div>
+        <div class="name-input-div">
             <h5>Last Name</h5>
             <input id="last-name-input" type="text">
         </div>
-        <div>
-            <h5>Popularity</h5>
-            <input id="popularity-input" type="range" min="1" max="10">
-        </div>
-        <div>
+        <div class="name-input-div">
             <h5>Number of Names</h5>
             <input id="number-of-names-input" type="range" min="1" max="10">
         </div>
-        <div>
+        <div class="name-input-div">
             <h5>Length of Names</h5>
             <input id="length-of-names-input" type="range" min="1" max="10">
         </div>
     </div>
 </section>
+<script src="../static/script/globalScript.js" th:src="@{/script/globalScript.js}"></script>
+<script src="../static/script/generatorScript.js"
+       th:src="@{/script/generatorScript.js}"></script>
 </body>
 </html>
