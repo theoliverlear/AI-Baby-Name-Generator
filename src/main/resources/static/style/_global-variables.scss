@@ -1,0 +1,26 @@
+/*===============================-Variables-================================*/
+
+/*----------------------------------Colors----------------------------------*/
+$primary-white: #f1f1f1;
+$soft-blue: #D2D5EB;
+$primary-black: black;
+$primary-bisque: bisque;
+/*---------------------------------Borders----------------------------------*/
+$very-thin-border: calc(((0.05vw + 0.05vh) / 2) + 0.05em);
+$thin-border: calc(((0.1vw + 0.1vh) / 2) + 0.1em);
+/*----------------------------------Sizes-----------------------------------*/
+$none: 0;
+$eighth-percent: calc(((0.125vw + 0.125vh) / 2) + 0.0625em);
+$quarter-percent: calc(((0.25vw + 0.25vh) / 2) + 0.125em);
+$half-percent: calc(((0.5vw + 0.5vh) / 2) + 0.25em);
+$one-percent: calc(((1vw + 1vh) / 2) + 0.5em);
+$two-percent: calc(((2vw + 2vh) / 2) + 1em);
+$three-percent: calc(((3vw + 3vh) / 2) + 1.5em);
+$five-percent: calc(((5vw + 5vh) / 2) + 2.5em);
+$ten-percent: calc(((10vw + 10vh) / 2) + 5em);
+$twenty-percent: calc(((20vw + 20vh) / 2) + 10em);
+$thirty-percent: calc(((30vw + 30vh) / 2) + 15em);
+$fifty-percent: calc(((50vw + 50vh) / 2) + 25em);
+$seventy-five-percent: calc(((75vw + 75vh) / 2) + 37.5em);
+/*-----------------------------------Url------------------------------------*/
+$background-image: url("https://shorturl.at/hjPQV");
