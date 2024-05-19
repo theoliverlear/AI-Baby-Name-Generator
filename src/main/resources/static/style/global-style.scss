@@ -3,6 +3,7 @@
 /*=================================-Styles-=================================*/
 
 /*-----------------------------General-Content------------------------------*/
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f1f1f1;
@@ -20,37 +21,37 @@ body {
 }
 /*-----------------------------------Text-----------------------------------*/
 h1 {
-    font-size: calc(((4vw + 4vh) / 2 + 16px));
+    font-size: $h1-font-size;
     margin: 0;
     padding: 0;
 }
 h2 {
-    font-size: calc(((3vw + 3vh) / 2) + 14px);
+    font-size: $h2-font-size;
     margin: 0;
     padding: 0;
 }
 h3 {
-    font-size: calc(((2.5vw + 2.5vh) / 2) + 12px);
+    font-size: $h3-font-size;
     margin: 0;
     padding: 0;
 }
 h4 {
-    font-size: calc(((2vw + 2vh) / 2) + 10px);
+    font-size: $h4-font-size;
     margin: 0;
     padding: 0;
 }
 h5 {
-    font-size: calc(((1.75vw + 1.75vh) / 2) + 8px);
+    font-size: $h5-font-size;
     margin: 0;
     padding: 0;
 }
 h6 {
-    font-size: calc(((1.5vw + 1.5vh) / 2) + 8px);
+    font-size: $h6-font-size;
     margin: 0;
     padding: 0;
 }
 p {
-    font-size: calc(((1.5vw + 1.5vh) / 2) + 8px);
+    font-size: $h6-font-size;
     margin: 0;
     padding: 0;
 }
@@ -159,7 +160,7 @@ hr {
     cursor: pointer;
 }
 #generate-now-text {
-    font-size: calc(((2vw + 2vh) / 2) + 10px);
+    font-size: $h4-font-size;
     letter-spacing: calc((0.5vw + 0.5vh) / 2);
     transition: letter-spacing 0.25s ease-in-out;
 }
