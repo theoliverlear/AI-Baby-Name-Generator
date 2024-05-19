@@ -1,18 +1,19 @@
-let generatedNameText = document.getElementById("generated-name");
+import {GeneratedName} from "./GeneratedName.js";
+
 let genderInputs: HTMLCollectionOf<Element> = document.getElementsByClassName('gender-input');
 let genderInputArray: Element[] = Array.from(genderInputs);
 let selectedGender: string = 'Any';
 function updateSelectedGender(): void {
-    genderInputArray.forEach((genderInput: Element) => {
+    genderInputArray.forEach((genderInput: Element): void => {
         if ((genderInput as HTMLInputElement).checked) {
             selectedGender = (genderInput as HTMLInputElement).id;
         }
     });
 }
-genderInputArray.forEach((genderInput: Element) => {
+genderInputArray.forEach((genderInput: Element): void => {
     genderInput.addEventListener("click", updateSelectedGender);
 });
-let generateButton: HTMLElement = document.getElementById("generate-name-button");
+let generateButton: HTMLElement = document.getElementById("generate-name-button-div");
 let nationalityInput: HTMLElement = document.getElementById('nationality-input');
 let similarNamesInput: HTMLElement = document.getElementById('similar-names-input');
 let dissimilarNamesInput: HTMLElement = document.getElementById('dissimilar-names-input');
@@ -42,18 +43,47 @@ async function getNamesFromServer(): Promise<any> {
     let response = await preResponse.json();
     return response;
 }
+let generatedNamesSection: HTMLElement = document.getElementById('generated-names-section');
 function displayNamesFromServer(): void {
+    generatedNamesSection.innerHTML = '';
     getNamesFromServer().then(response => {
-        let generatedNames: string = '';
         console.log(response.names);
-        response.names.names.forEach((name: {name: string}) => {
+        response.names.names.forEach((name: {name: string}): void => {
             console.log(name.name);
-            generatedNames += name.name + '\n';
+            let nameString: string = name.name.replace(' ', '\n');
+
+            let generatedName: GeneratedName = new GeneratedName(nameString);
+            let generatedNameBubble: HTMLElement = document.createElement('div');
+            generatedNameBubble.classList.add('generated-name-bubble');
+            // Add some randomness to the vertical position
+            let verticalOffset = Math.floor(Math.random() * 80) - 40; // gives a random number between -20 and 20
+            let randomFloatType = Math.floor(Math.random() * 2) + 1;
+            console.log(randomFloatType);
+            if (randomFloatType === 1) {
+                generatedNameBubble.style.animation = 'float 4s ease-in-out infinite';
+            } else {
+                generatedNameBubble.style.animation = 'negative-float 4s ease-in-out infinite';
+            }
+            generatedNameBubble.style.transform = `translateY(${verticalOffset}px)`;
+            generatedNameBubble.innerHTML = generatedName.buildBubbleHtml();
+            generatedNamesSection.appendChild(generatedNameBubble);
         });
-        generatedNameText.innerText = generatedNames;
     }).catch(error => {
         console.error('Error: ', error)
     })
 }
-
-generateButton.addEventListener("click", displayNamesFromServer);
+let loadingWheelDiv: HTMLElement = document.getElementById('loading-wheel-div');
+function generateNamesSequence(): void {
+    hideElement(generateButton);
+    showElement(loadingWheelDiv);
+    displayNamesFromServer();
+    hideElement(loadingWheelDiv);
+    showElement(generateButton);
+}
+function showElement(element: HTMLElement): void {
+    element.style.display = 'flex';
+}
+function hideElement(element: HTMLElement): void {
+    element.style.display = 'none';
+}
+generateButton.addEventListener("click", generateNamesSequence);
