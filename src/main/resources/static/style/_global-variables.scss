@@ -29,6 +29,13 @@ $twenty-percent: calc(((20vw + 20vh) / 2) + 10em);
 $thirty-percent: calc(((30vw + 30vh) / 2) + 15em);
 $fifty-percent: calc(((50vw + 50vh) / 2) + 25em);
 $seventy-five-percent: calc(((75vw + 75vh) / 2) + 37.5em);
+/*--------------------------------Font-Sizes--------------------------------*/
+$h1-font-size: calc(((4vw + 4vh) / 2) + 16px);
+$h2-font-size: calc(((3vw + 3vh) / 2) + 14px);
+$h3-font-size: calc(((2.5vw + 2.5vh) / 2) + 12px);
+$h4-font-size: calc(((2vw + 2vh) / 2) + 10px);
+$h5-font-size: calc(((1.75vw + 1.75vh) / 2) + 8px);
+$h6-font-size: calc(((1.5vw + 1.5vh) / 2) + 8px);
 /*-----------------------------------Url------------------------------------*/
 $background-image: url("https://shorturl.at/hjPQV");
 $thought-bubble: url("../images/thought_bubble.svg");
