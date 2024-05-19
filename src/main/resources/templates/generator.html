@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../static/style/generator-style.css"
           th:href="@{/style/generator-style.css}">
     <link rel="stylesheet" href="../static/style/global-style.css"
-            th:href="@{/style/global-style.css}">
+          th:href="@{/style/global-style.css}">
 </head>
 <body>
 <main>
@@ -16,16 +16,22 @@
     <div id="generated-name-title-div">
         <h2 id="generated-name-text">Generated Name</h2>
     </div>
-    <div id="generated-name-div">
-        <h4 id="generated-name">...</h4>
-    </div>
+    <section id="generated-names-section">
+
+    </section>
     <div id="generate-name-button-div" class="medium-button">
-        <h4 id="generate-name-button">Generate Name</h4>
+        <h4 id="generate-name-button">Generate</h4>
+    </div>
+    <div id="loading-wheel-div">
+        <img id="loading-wheel-img" src="../static/images/loading_wheel.gif" alt="loading wheel"
+             th:src="@{/images/loading_wheel.gif}">
     </div>
 </section>
 <section id="generator-settings">
-    <h3 id="generator-settings-text">Generator Settings</h3>
-    <div id="generator-settings-div">
+    <div id="generator-settings-title-div">
+        <h3 id="generator-settings-title-text">Settings</h3>
+    </div>
+    <div id="generator-settings-input-div">
         <div id="generator-gender-div" class="name-input-div">
             <h5>Gender</h5>
             <input class="gender-input" id="any" name="gender" type="radio" checked>
@@ -80,6 +86,7 @@
 </section>
 <script src="../static/script/globalScript.js" th:src="@{/script/globalScript.js}"></script>
 <script src="../static/script/generatorScript.js"
-       th:src="@{/script/generatorScript.js}"></script>
+        type="module"
+        th:src="@{/script/generatorScript.js}"></script>
 </body>
 </html>
