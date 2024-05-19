@@ -2,7 +2,9 @@
 
 /*----------------------------------Colors----------------------------------*/
 $primary-white: #f1f1f1;
+$soft-black: #1A1A1A;
 $soft-blue: #D2D5EB;
+$soft-grey: #b5c2c2;
 $primary-black: black;
 $primary-bisque: bisque;
 /*---------------------------------Borders----------------------------------*/
@@ -16,11 +18,17 @@ $half-percent: calc(((0.5vw + 0.5vh) / 2) + 0.25em);
 $one-percent: calc(((1vw + 1vh) / 2) + 0.5em);
 $two-percent: calc(((2vw + 2vh) / 2) + 1em);
 $three-percent: calc(((3vw + 3vh) / 2) + 1.5em);
+$four-percent: calc(((4vw + 4vh) / 2) + 2em);
 $five-percent: calc(((5vw + 5vh) / 2) + 2.5em);
+$six-percent: calc(((6vw + 6vh) / 2) + 3em);
 $ten-percent: calc(((10vw + 10vh) / 2) + 5em);
+$twelve-percent: calc(((12vw + 12vh) / 2) + 6em);
+$fourteen-percent: calc(((14vw + 14vh) / 2) + 7em);
+$fifteen-percent: calc(((15vw + 15vh) / 2) + 7.5em);
 $twenty-percent: calc(((20vw + 20vh) / 2) + 10em);
 $thirty-percent: calc(((30vw + 30vh) / 2) + 15em);
 $fifty-percent: calc(((50vw + 50vh) / 2) + 25em);
 $seventy-five-percent: calc(((75vw + 75vh) / 2) + 37.5em);
 /*-----------------------------------Url------------------------------------*/
 $background-image: url("https://shorturl.at/hjPQV");
+$thought-bubble: url("../images/thought_bubble.svg");
