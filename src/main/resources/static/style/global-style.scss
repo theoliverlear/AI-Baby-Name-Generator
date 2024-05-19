@@ -66,11 +66,10 @@ hr {
     margin: $eighth-percent;
     transition: background-color, color, 0.25s ease-in-out;
     border : {
-        radius: $five-percent;
+        radius: $one-percent;
     }
     &:hover {
-        background-color: $soft-blue;
-        color: $primary-black;
+        background-color: $soft-black;
         border: $primary-bisque solid $very-thin-border;
     }
     &:active {
@@ -81,7 +80,7 @@ hr {
 }
 .medium-button {
     @extend .button;
-    padding: $one-percent $none;
+    padding: $one-percent $two-percent;
 }
 /*-------------------------Content-Stripe---------------------------*/
 .content-stripe {
