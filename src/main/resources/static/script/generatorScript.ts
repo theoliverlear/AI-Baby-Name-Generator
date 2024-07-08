@@ -1,4 +1,4 @@
-import {GeneratedName} from "./GeneratedName.js";
+import {GeneratedName} from "./models/GeneratedName.js";
 
 let genderInputs: HTMLCollectionOf<Element> = document.getElementsByClassName('gender-input');
 let genderInputArray: Element[] = Array.from(genderInputs);
@@ -65,7 +65,7 @@ function displayNamesFromServer(): void {
                 generatedNameBubble.style.animation = 'negative-float 4s ease-in-out infinite';
             }
             generatedNameBubble.style.transform = `translateY(${verticalOffset}px)`;
-            generatedNameBubble.innerHTML = generatedName.buildBubbleHtml();
+            generatedNameBubble.innerHTML = generatedName.getHtmlString();
             generatedNamesSection.appendChild(generatedNameBubble);
         });
     }).catch(error => {
