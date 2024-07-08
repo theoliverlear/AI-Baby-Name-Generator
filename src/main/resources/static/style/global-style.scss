@@ -1,206 +1,100 @@
 @import "global-variables";
+@import "global-mixins";
+@import "global-functions";
+@import "global-placeholders";
 
 /*=================================-Styles-=================================*/
 
-/*-----------------------------General-Content------------------------------*/
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f1f1f1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-image: $background-image;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
 /*-----------------------------------Text-----------------------------------*/
 h1 {
     font-size: $h1-font-size;
-    margin: 0;
-    padding: 0;
+    @extend %no-margin-padding;
 }
 h2 {
     font-size: $h2-font-size;
-    margin: 0;
-    padding: 0;
+    @extend %no-margin-padding;
 }
 h3 {
     font-size: $h3-font-size;
-    margin: 0;
-    padding: 0;
+    @extend %no-margin-padding;
 }
 h4 {
     font-size: $h4-font-size;
-    margin: 0;
-    padding: 0;
+    @extend %no-margin-padding;
 }
 h5 {
     font-size: $h5-font-size;
-    margin: 0;
-    padding: 0;
+    @extend %no-margin-padding;
 }
 h6 {
     font-size: $h6-font-size;
-    margin: 0;
-    padding: 0;
+    @extend %no-margin-padding;
 }
 p {
     font-size: $h6-font-size;
-    margin: 0;
-    padding: 0;
+    @extend %no-margin-padding;
 }
 hr {
     width: 100%;
     margin: calc(((1vw + 1vh) / 2) + 0.5em);
 }
+.link-no-style {
+    text-decoration: inherit;
+    color: inherit;
+}
+/*-----------------------------General-Content------------------------------*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $off-white;
+    @include flex(center, center, column);
+    @extend %no-margin-padding;
+    text-align: center;
+    main {
+        width: 100%;
+        @include flex(center, center, column);
+        @extend %no-margin-padding;
+    }
+}
+header {
+    width: 100%;
+    height: calc-size(3, 6, 2);
+    @include flex(center, center, row);
+    margin: 0 0 $one-percent 0;
+    background-color: $light-charcoal;
+    nav {
+        width: 50%;
+        @extend %fit-container;
+        @include flex(space-around, center, row);
+        .nav-item {
+            padding: $half-percent;
+            //background-color: $charcoal;
+            @extend %soft-border-curve;
+            @include flex(center, center, row);
+            transition: background-color 0.1s ease-in-out;
+            h4 {
+                color: $pristine-white;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: $charcoal;
+            }
+        }
+    }
+}
 /*---------------------------------Buttons----------------------------------*/
 .button {
-    background-color: $primary-black;
-    color: $primary-white;
-    padding: $half-percent $quarter-percent;
+    @include size(auto, auto);
+    background-color: $charcoal;
+    color: $pristine-white;
+    padding: $half-percent;
+    box-shadow: $steel-blue $quarter-percent $quarter-percent 0 0;
     margin: $eighth-percent;
     transition: background-color, color, 0.25s ease-in-out;
-    border : {
-        radius: $one-percent;
-    }
-    &:hover {
-        background-color: $soft-black;
-        border: $primary-bisque solid $very-thin-border;
-    }
-    &:active {
-        background-color: $primary-bisque;
-        color: $primary-black;
-        border: $primary-black solid $very-thin-border;
-    }
+    @extend %soft-border-curve;
 }
 .medium-button {
     @extend .button;
-    padding: $one-percent $two-percent;
-}
-/*-------------------------Content-Stripe---------------------------*/
-.content-stripe {
-    margin: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: bisque;
-    border-top: black solid calc((0.5vw + 0.5vh) / 2);
-    border-bottom: black solid calc((0.5vw + 0.5vh) / 2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc((5vw + 5vh) / 2);
-    box-shadow: black calc((1vw + 1vh) / 2)
-    calc((1vw + 1vh) / 2)
-    calc((1vw + 1vh) / 2);
-    transition: background-color 0.25s ease-in-out;
-}
-.content-stripe-text {
-    font-style: italic;
-    letter-spacing: calc((0.5vw + 0.5vh) / 2);
-    text-shadow: rgba(0, 0, 0, 0.4) calc((0.15vw + 0.15vh) / 2)
-    calc((0.15vw + 0.15vh) / 2)
-    calc((0.15vw + 0.15vh) / 2);
-    transition: letter-spacing 0.25s ease-in-out;
-}
-.content-stripe:hover {
-    background-color: $primary-black;
-    color: $primary-bisque;
-    border-top: $primary-bisque solid calc((0.5vw + 0.5vh) / 2);
-    border-bottom: $primary-bisque solid calc((0.5vw + 0.5vh) / 2);
-    transition: background-color 0.25s ease-in-out;
-}
-.content-stripe:hover .content-stripe-text  {
-    letter-spacing: calc((1vw + 1vh) / 2);
-    transition: letter-spacing 0.25s ease-in-out;
-}
-/*----------------------------Paragraphs----------------------------*/
-.paragraph-section {
-    width: calc((80vw + 80vh) / 2);
-    margin: calc((2vw + 2vh) / 2) 0;
-    background-color: black;
-    padding: calc((1vw + 1vh) / 2) calc((7vw + 7vh) / 2);
-    border-radius: calc((10vw + 10vh) / 2);
-    border: bisque solid calc((0.5vw + 0.5vh) / 2);
-    color: bisque;
-    box-shadow: black calc((.25vw + .25vh) / 2)
-    calc((.5vw + .5vh) / 2)
-    calc((.5vw + .5vh) / 2);
-    transition: box-shadow 0.25s ease-in-out;
-}
-.paragraph-section:hover {
-    box-shadow: black calc((.5vw + 0.5vh) / 2)
-    calc((1vw + 1vh) / 2)
-    calc((1vw + 1vh) / 2);
-    transition: box-shadow 0.25s ease-in-out;
-}
-.paragraph-text {
-    text-align: center;
-}
-/*------------------------Generate-Now-Button-----------------------*/
-#generate-now-div {
-    background-color: black;
-    color: bisque;
-    padding: calc((0.25vw + 0.25vh) / 2) calc((5vw + 5vh) / 2);
-    border-radius: calc((5vw + 5vh) / 2);
-    margin: 2vh 0 0 0;
-    box-shadow: #f1f1f1 calc((0.5vw + 0.5vh) / 2) calc((1vw + 1vh) / 2);
-    transition: box-shadow 0.25s ease-in-out, color 0.25s ease-in-out;
-}
-#generate-now-div:hover {
-    color: #f1f1f1;
-    box-shadow: #f1f1f1 calc((1vw + 1vh) / 2) calc((2vw + 2vh) / 2);
-    transition: box-shadow 0.25s ease-in-out;
-    cursor: pointer;
-}
-#generate-now-text {
-    font-size: $h4-font-size;
-    letter-spacing: calc((0.5vw + 0.5vh) / 2);
-    transition: letter-spacing 0.25s ease-in-out;
-}
-/*--------------------------Intro-Section---------------------------*/
-#title-div {
-    text-align: center;
-    margin: calc((1.25vw + 1.25vh) / 2) 0 calc((1.5vw + 1.5vh) / 2) 0;
-    background-color: bisque;
-    padding: calc((1vw + 1vh) / 2) calc((7vw + 7vh) / 2);
-    border-radius: calc((10vw + 10vh) / 2);
-    border: #f1f1f1 solid calc((0.5vw + 0.5vh) / 2);
-    box-shadow: black calc((1vw + 1vh) / 2)
-    calc((1vw + 1vh) / 2)
-    calc((1vw + 1vh) / 2);
-    transition: background-color 0.25s ease-in-out;
-}
-#title-div:hover {
-    background-color: black;
-    border: bisque solid calc((0.5vw + 0.5vh) / 2);
-    transition: background-color 0.25s ease-in-out;
-}
-#title-div:hover #title {
-    color: #f1f1f1;
-    transition: color 0.25s ease-in-out;
-}
-#title {
-    font-style: italic;
-    letter-spacing: calc((0.5vw + 0.5vh) / 2);
-    color: black;
-    transition: color 0.25s ease-in-out;
-}
-#baby-logo {
-    width: calc((30vw + 30vh) / 2);
-    height: auto;
-    border-radius: 50%;
-    border: black solid calc((1vw + 1vh) / 2);
-    box-shadow: bisque calc((1vw + 1vh) / 2)
-    calc((1vw + 1vh) / 2)
-    calc((1vw + 1vh) / 2);
-    animation: radiate 8s linear infinite;
 }
 /*---------------------------Animations-----------------------------*/
 @keyframes radiate {
