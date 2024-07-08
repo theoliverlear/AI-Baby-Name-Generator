@@ -7,36 +7,63 @@
     <link rel="stylesheet" href="../static/style/global-style.css"
           th:href="@{/style/global-style.css}">
     <link rel="stylesheet" href="../static/style/home-style.css"
-            th:href="@{/style/home-style.css}">
+          th:href="@{/style/home-style.css}">
 </head>
 <body>
-<div id="title-div">
-    <h1 id="title">AI Baby Name Generator</h1>
-</div>
-<img id="baby-logo" src="https://shorturl.at/jzQR0" alt="baby icon">
-<div>
-    <div id="generate-now-div">
-        <h2 id="generate-now-text">Generate Now</h2>
+<header>
+    <nav>
+        <a href="/generator/" class="link-no-style nav-item">
+            <div>
+                <h4 class="nav-text">Generator</h4>
+            </div>
+        </a>
+        <a href="/names/" class="link-no-style nav-item">
+            <div>
+                <h4 class="nav-text">Your Names</h4>
+            </div>
+        </a>
+        <a href="/rankings/" class="link-no-style nav-item">
+            <div>
+                <h4 class="nav-text">Rankings</h4>
+            </div>
+        </a>
+    </nav>
+</header>
+<main>
+    <div id="title-div">
+        <h2 id="title-text">AI Baby Name Generator</h2>
     </div>
-</div>
-<!---------------------------------Summary----------------------------------->
-<section class="paragraph-section">
-    <p class="paragraph-text">
-        The days of picking baby names from movies and TV shows, or even
-        family members, is over! It's finally time to use artificial
-        intelligence as it was meant for -- generating baby names! In all
-        seriousness, AI has the ability to be creative in ways we could only
-        dream of. It's read more books and heard of more people that you'd
-        ever have time for. That's what this app will do for you. Your child
-        will have that name for the rest of their life -- so let's make it
-        right! This app will use OpenAI to help you name your child based on a
-        number of factors. You can choose between boy names, girl names, or
-        unisex names which can be filtered by nationality, popularity,
-        uniqueness, and preferred names! So what are you waiting for? Name
-        your child today with the AI Baby Name Generator! So you can see what
-        we're all about, you can get sneek peek with a free account.
-    </p>
-</section>
+    <section id="logo-with-button-section">
+        <div id="baby-logo-div">
+            <img id="baby-logo-img" src="../static/images/baby_icon.png" alt="baby icon"
+                 th:src="@{/images/baby_icon.png}">
+        </div>
+        <div>
+            <div id="generate-now-div" class="medium-button">
+                <h3 id="generate-now-text">Generate</h3>
+            </div>
+        </div>
+    </section>
+    <section id="promo-text-section">
+        <div id="promo-text-div">
+            <p id="promo-text">
+                The days of picking baby names from movies and TV shows, or even
+                family members, is over! It's finally time to use artificial
+                intelligence as it was meant for -- generating baby names! In all
+                seriousness, AI has the ability to be creative in ways we could only
+                dream of. It's read more books and heard of more people that you'd
+                ever have time for. That's what this app will do for you. Your child
+                will have that name for the rest of their life -- so let's make it
+                right! This app will use OpenAI to help you name your child based on a
+                number of factors. You can choose between boy names, girl names, or
+                unisex names which can be filtered by nationality, popularity,
+                uniqueness, and preferred names! So what are you waiting for? Name
+                your child today with the AI Baby Name Generator! So you can see what
+                we're all about, you can get sneek peek with a free account.
+            </p>
+        </div>
+    </section>
+</main>
 <script src="../static/script/globalScript.js"
         th:src="@{/script/globalScript.js}"></script>
 <script src="../static/script/homeScript.js"
