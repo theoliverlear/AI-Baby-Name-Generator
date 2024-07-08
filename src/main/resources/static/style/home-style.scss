@@ -1,0 +1,29 @@
+@import "global-variables";
+@import "global-mixins";
+@import "global-functions";
+@import "global-placeholders";
+
+/*--------------------------Intro-Section---------------------------*/
+#title-div {
+    background-color: $lavender-mist;
+    padding: $half-percent;
+    @extend %soft-border-curve;
+    border: $pristine-white solid $very-thin-border;
+    box-shadow: $soft-amethyst $quarter-percent $quarter-percent 0 0;
+    #title-text {
+        //font-style: italic;
+        letter-spacing: $eighth-percent;
+        color: $charcoal;
+    }
+}
+#baby-logo-div {
+    @include square-size($fifteen-percent);
+    padding: $one-percent;
+    border-radius: 50%;
+    border: $thin-border solid $deep-blue;
+    box-shadow: $soft-amethyst $quarter-percent $quarter-percent 0 0;
+    #baby-logo-img {
+        @extend %fit-container;
+        border-radius: inherit;
+    }
+}
