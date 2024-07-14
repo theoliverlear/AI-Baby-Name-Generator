@@ -13,14 +13,29 @@ $primary-bisque: bisque;
 
 
 
-$pristine-white: hsl(0, 0%, 100%);
-$off-white: hsl(0, 0%, 98%);
-$alabaster-stone: hsl(40, 21%, 89%);
+
 $lavender-mist: hsl(258, 100%, 92%);
 $soft-amethyst: hsl(248, 100%, 82%);
 $deep-blue: hsl(228, 37%, 62%);
 $steel-blue: hsl(227, 11%, 50%);
+
+$pristine-white: hsl(0, 0%, 100%);
+$off-white: hsl(0, 0%, 98%);
+$alabaster-stone: hsl(40, 21%, 89%);
+$light-cream: hsl(40, 100%, 90%);
+$cream: hsl(35, 100%, 87%);
+$soft-bronze: hsl(40, 45%, 80%);
+$lighter-tan: hsl(31, 19%, 70%);
+$tan: hsl(31, 19%, 66%);
+$golden-harvest: hsl(38, 34%, 64%);
+$bronze: hsl(41, 45%, 60%);
+$pure-brown: hsl(41, 100%, 30%);
+$mahogany: hsl(9, 21%, 32%);
+$dark-brown: hsl(41, 100%, 10%);
+$grey-overlay: hsla(0, 0%, 50%, 0.15);
+$lightest-charcoal: hsl(0, 0%, 30%);
 $light-charcoal: hsl(0, 0%, 20%);
+$mid-charcoal: hsl(0, 0%, 15%);
 $charcoal: hsl(0, 0%, 9%);
 $absolute-black: hsl(0, 0%, 0%);
 //-----------------------------------Fonts------------------------------------
@@ -34,8 +49,8 @@ $h4-half-font-size: min(simple-pixel-calc(3.5,  7), 90px);
 $h4-quarter-font-size: min(simple-pixel-calc(3,  6), 80px);
 $h4-font-size: min(simple-pixel-calc(2.5,  6), 80px);
 $h5-font-size: min(simple-pixel-calc(1.75,  4), 60px);
-$h6-font-size: min(simple-pixel-calc(1.15,  2), 40px);
-$p-font-size:  min(simple-pixel-calc(1.15,  2), 40px);
+$h6-font-size: min(simple-pixel-calc(1.2,  2), 40px);
+$p-font-size:  min(simple-pixel-calc(1.2,  2), 40px);
 //----------------------------------Borders-----------------------------------
 $thinnest-border: min(calc(((0.025vw + 0.025vh) / 2) + 0.025rem), 2px);
 $very-thin-border: calc(((0.05vw + 0.05vh) / 2) + 0.05em);
