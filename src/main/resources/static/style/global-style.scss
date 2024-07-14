@@ -46,10 +46,12 @@ hr {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: $off-white;
+    //background-color: $off-white;
+    background-color: $alabaster-stone;
     @include flex(center, center, column);
     @extend %no-margin-padding;
     text-align: center;
+    min-height: 100vh;
     main {
         width: 100%;
         @include flex(center, center, column);
@@ -61,14 +63,21 @@ header {
     height: calc-size(3, 6, 2);
     @include flex(center, center, row);
     margin: 0 0 $one-percent 0;
-    background-color: $light-charcoal;
+    //background-color: $tan;
+    background-color: $mahogany;
+    box-shadow: $bronze 0 0 $quarter-percent $quarter-percent;
     nav {
+        @extend %soft-border-curve;
+        //background-color: $lighter-tan;
         width: 50%;
         @extend %fit-container;
         @include flex(space-around, center, row);
+
         .nav-item {
+            border: $bronze solid $thin-border;
             padding: $half-percent;
-            //background-color: $charcoal;
+
+            //background-color: $golden-harvest;
             @extend %soft-border-curve;
             @include flex(center, center, row);
             transition: background-color 0.1s ease-in-out;
@@ -77,7 +86,8 @@ header {
             }
             &:hover {
                 cursor: pointer;
-                background-color: $charcoal;
+                background-color: $bronze;
+                //box-shadow: $bronze $quarter-percent $quarter-percent 0 0;
             }
         }
     }
@@ -85,16 +95,42 @@ header {
 /*---------------------------------Buttons----------------------------------*/
 .button {
     @include size(auto, auto);
-    background-color: $charcoal;
+    background-color: $mahogany;
     color: $pristine-white;
     padding: $half-percent;
-    box-shadow: $steel-blue $quarter-percent $quarter-percent 0 0;
+    //box-shadow: $bronze $quarter-percent $quarter-percent 0 0;
+    border: $bronze solid $thin-border;
     margin: $eighth-percent;
-    transition: background-color, color, 0.25s ease-in-out;
+    transition: background-color, color, 0.15s ease-in-out;
     @extend %soft-border-curve;
+    &:hover {
+        cursor: pointer;
+        background-color: $bronze;
+        color: $pristine-white;
+    }
 }
 .medium-button {
     @extend .button;
+}
+
+hr {
+    border: $bronze solid $thinnest-border;
+    box-shadow: $soft-bronze $quarter-percent $quarter-percent 0 0;
+}
+footer {
+    box-shadow: $bronze 0 0 $quarter-percent $quarter-percent;
+    margin-top: auto;
+    background-color: $mahogany;
+    width: 100%;
+    padding: $half-percent 0;
+    color: $pristine-white;
+    @include flex(center, center, row);
+    div {
+        flex: 1;
+        &:first-child {
+            border-right: $bronze solid $thin-border;
+        }
+    }
 }
 /*---------------------------Animations-----------------------------*/
 @keyframes radiate {
