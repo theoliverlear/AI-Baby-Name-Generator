@@ -5,25 +5,84 @@
 
 /*--------------------------Intro-Section---------------------------*/
 #title-div {
-    background-color: $lavender-mist;
+    background-color: $bronze;
     padding: $half-percent;
     @extend %soft-border-curve;
-    border: $pristine-white solid $very-thin-border;
-    box-shadow: $soft-amethyst $quarter-percent $quarter-percent 0 0;
+    box-shadow: $pure-brown $quarter-percent $quarter-percent 0 0;
+    margin: 0 0 $one-percent 0;
     #title-text {
         //font-style: italic;
         letter-spacing: $eighth-percent;
-        color: $charcoal;
+        color: $pristine-white;
     }
 }
-#baby-logo-div {
-    @include square-size($fifteen-percent);
-    padding: $one-percent;
-    border-radius: 50%;
-    border: $thin-border solid $deep-blue;
-    box-shadow: $soft-amethyst $quarter-percent $quarter-percent 0 0;
-    #baby-logo-img {
-        @extend %fit-container;
-        border-radius: inherit;
+#intro-section {
+    @include flex(center, center, row);
+    margin: 0 0 $one-percent 0;
+    #logo-with-button-section {
+        @include flex(center, center, column);
+        margin: 0 0 0 $two-percent;
+        #baby-logo-div {
+            @include square-size($fifteen-percent);
+            //padding: $one-percent;
+            //border-radius: 50%;
+            //border: $thin-border solid $golden-harvest;
+            //box-shadow: $soft-amethyst $quarter-percent $quarter-percent 0 0;
+            margin: 0 0 $half-percent 0;
+            #baby-logo-img {
+                @extend %fit-container;
+                border-radius: inherit;
+            }
+        }
+    }
+    #promo-text-section {
+        @include flex(center, center, column);
+        background-color: $lighter-tan;
+        @extend %soft-border-curve;
+        margin: 0 0 0 $one-percent;
+        width: $forty-percent;
+        padding: $one-percent;
+        border: $mahogany solid $very-thin-border;
+        box-shadow: $mahogany $quarter-percent $quarter-percent 0 0;
+        #subtext-div {
+            color: $pristine-white;
+            margin: 0 0 $one-percent 0;
+            text-transform: capitalize;
+        }
+        #promo-text-div {
+            padding: $one-percent;
+            @extend %soft-border-curve;
+            //box-shadow: $soft-amethyst $quarter-percent $quarter-percent 0 0;
+            background-color: $mahogany;
+            #promo-text {
+                text-align: start;
+                color: $pristine-white;
+            }
+        }
+    }
+}
+#auto-generator-section {
+    width: 100%;
+    #auto-generator-title-div {
+        margin: $one-percent 0;
+        padding: $half-percent 0;
+        background-color: $bronze;
+        width: 100%;
+        box-shadow: $pure-brown 0 $quarter-percent $quarter-percent;
+        h3 {
+            color: $pristine-white;
+        }
+    }
+    #auto-generated-names-section {
+        @include flex(space-around, center, row);
+        margin: $two-percent 0 0 0;
+        padding: $one-percent;
+        box-shadow: $golden-harvest 0 0 $eighth-percent $quarter-percent;
+        background-color: $grey-overlay;
+        .generated-name-div {
+            .generated-name-text {
+                color: $lightest-charcoal;
+            }
+        }
     }
 }
