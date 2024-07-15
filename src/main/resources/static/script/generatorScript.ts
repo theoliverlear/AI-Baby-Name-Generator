@@ -1,27 +1,22 @@
 import {GeneratedName} from "./models/GeneratedName.js";
+import {loadPage} from "./globalScript";
 
-let genderInputs: HTMLCollectionOf<Element> = document.getElementsByClassName('gender-input');
-let genderInputArray: Element[] = Array.from(genderInputs);
 let selectedGender: string = 'Any';
-function updateSelectedGender(): void {
-    genderInputArray.forEach((genderInput: Element): void => {
-        if ((genderInput as HTMLInputElement).checked) {
-            selectedGender = (genderInput as HTMLInputElement).id;
-        }
-    });
-}
-genderInputArray.forEach((genderInput: Element): void => {
-    genderInput.addEventListener("click", updateSelectedGender);
-});
-let generateButton: HTMLElement = document.getElementById("generate-name-button-div");
-let nationalityInput: HTMLElement = document.getElementById('nationality-input');
-let similarNamesInput: HTMLElement = document.getElementById('similar-names-input');
-let dissimilarNamesInput: HTMLElement = document.getElementById('dissimilar-names-input');
-let complexityInput: HTMLElement = document.getElementById('complexity-input');
-let uniquenessInput: HTMLElement = document.getElementById('uniqueness-input');
-let lastNameInput: HTMLElement = document.getElementById('last-name-input');
 let includeLastName: boolean = true;
-let numberOfNamesInput: HTMLElement = document.getElementById('number-of-names-input');
+let genderInputs: JQuery<HTMLElement> = $('.gender-input');
+
+let genderInputArray: Element[] = Array.from(genderInputs);
+let generateButton: JQuery<HTMLElement> = $("#generate-name-button-div");
+let nationalityInput: JQuery<HTMLElement> = $('#nationality-input');
+let similarNamesInput: JQuery<HTMLElement> = $('#similar-names-input');
+let dissimilarNamesInput: JQuery<HTMLElement> = $('#dissimilar-names-input');
+let complexityInput: JQuery<HTMLElement> = $('#complexity-input');
+let uniquenessInput: JQuery<HTMLElement> = $('#uniqueness-input');
+let lastNameInput: JQuery<HTMLElement> = $('#last-name-input');
+let numberOfNamesInput: JQuery<HTMLElement> = $('#number-of-names-input');
+let generatedNamesSection: JQuery<HTMLElement> = $('#generated-names-section');
+let loadingWheelDiv: JQuery<HTMLElement> = $('#loading-wheel-div');
+//=============================-Server-Functions-=============================
 async function getNamesFromServer(): Promise<any> {
     let preResponse: Response = await fetch('/generator/generate', {
         method: 'POST',
@@ -30,49 +25,57 @@ async function getNamesFromServer(): Promise<any> {
         },
         body: JSON.stringify({
             gender: selectedGender,
-            nationality: (nationalityInput as HTMLInputElement).value,
-            similarNames: (similarNamesInput as HTMLInputElement).value,
-            dissimilarNames: (dissimilarNamesInput as HTMLInputElement).value,
-            lastName: (lastNameInput as HTMLInputElement).value,
+            nationality: nationalityInput.val(),
+            similarNames: similarNamesInput.val(),
+            dissimilarNames: dissimilarNamesInput.val(),
+            lastName: lastNameInput.val(),
             includeLastName: includeLastName,
-            numNames: Number((numberOfNamesInput as HTMLInputElement).value),
-            nameComplexity: Number((complexityInput as HTMLInputElement).value),
-            nameUniqueness: Number((uniquenessInput as HTMLInputElement).value)
+            numNames: numberOfNamesInput.val() as number,
+            nameComplexity: complexityInput.val() as number,
+            nameUniqueness: uniquenessInput.val() as number
         })
     })
     let response = await preResponse.json();
     return response;
 }
-let generatedNamesSection: HTMLElement = document.getElementById('generated-names-section');
+function updateSelectedGender(): void {
+    genderInputArray.forEach((genderInput: Element): void => {
+        if ((genderInput as HTMLInputElement).checked) {
+            selectedGender = (genderInput as HTMLInputElement).id;
+        }
+    });
+}
+type SimpleName = {
+    name: string
+}
 function displayNamesFromServer(): void {
-    generatedNamesSection.innerHTML = '';
+    generatedNamesSection.empty();
     getNamesFromServer().then(response => {
         console.log(response.names);
-        response.names.names.forEach((name: {name: string}): void => {
+        response.names.names.forEach((name: SimpleName): void => {
             console.log(name.name);
             let nameString: string = name.name.replace(' ', '\n');
-
             let generatedName: GeneratedName = new GeneratedName(nameString);
-            let generatedNameBubble: HTMLElement = document.createElement('div');
-            generatedNameBubble.classList.add('generated-name-bubble');
+            let generatedNameBubble: HTMLElement = generatedName.getHtml();
             // Add some randomness to the vertical position
-            let verticalOffset = Math.floor(Math.random() * 80) - 40; // gives a random number between -20 and 20
-            let randomFloatType = Math.floor(Math.random() * 2) + 1;
-            console.log(randomFloatType);
-            if (randomFloatType === 1) {
-                generatedNameBubble.style.animation = 'float 4s ease-in-out infinite';
-            } else {
-                generatedNameBubble.style.animation = 'negative-float 4s ease-in-out infinite';
-            }
-            generatedNameBubble.style.transform = `translateY(${verticalOffset}px)`;
-            generatedNameBubble.innerHTML = generatedName.getHtmlString();
-            generatedNamesSection.appendChild(generatedNameBubble);
+            applyRandomFloat($(generatedNameBubble));
+            generatedNamesSection.append(generatedNameBubble);
         });
     }).catch(error => {
         console.error('Error: ', error)
-    })
+    });
 }
-let loadingWheelDiv: HTMLElement = document.getElementById('loading-wheel-div');
+function applyRandomFloat(generatedNameBubble: JQuery<HTMLElement>): void {
+    let verticalOffset: number = Math.floor(Math.random() * 80) - 40; // gives a random number between -20 and 20
+    let randomFloatType: number = Math.floor(Math.random() * 2) + 1;
+    console.log(randomFloatType);
+    if (randomFloatType === 1) {
+        generatedNameBubble.css('animation', 'float 4s ease-in-out infinite');
+    } else {
+        generatedNameBubble.css('animation', 'negative-float 4s ease-in-out infinite');
+    }
+    generatedNameBubble.css('transform', `translateY(${verticalOffset}px)`);
+}
 function generateNamesSequence(): void {
     hideElement(generateButton);
     showElement(loadingWheelDiv);
@@ -80,10 +83,15 @@ function generateNamesSequence(): void {
     hideElement(loadingWheelDiv);
     showElement(generateButton);
 }
-function showElement(element: HTMLElement): void {
-    element.style.display = 'flex';
+function showElement(element: JQuery<HTMLElement>): void {
+    element.css('display', 'flex');
 }
-function hideElement(element: HTMLElement): void {
-    element.style.display = 'none';
+function hideElement(element: JQuery<HTMLElement>): void {
+    element.hide();
 }
-generateButton.addEventListener("click", generateNamesSequence);
+
+let shouldLoadPage: boolean = loadPage(document.body, 'generator');
+if (shouldLoadPage) {
+    generateButton.on("click", generateNamesSequence);
+    genderInputs.on("click", updateSelectedGender);
+}
