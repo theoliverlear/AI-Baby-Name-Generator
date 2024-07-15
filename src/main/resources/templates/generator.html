@@ -8,26 +8,55 @@
     <link rel="stylesheet" href="../static/style/global-style.css"
           th:href="@{/style/global-style.css}">
 </head>
-<body>
+<body data-page="generator">
+<header>
+    <nav>
+        <a href="/generator/" class="link-no-style nav-item">
+            <div>
+                <h4 class="nav-text">Generator</h4>
+            </div>
+        </a>
+        <a href="/names/" class="link-no-style nav-item">
+            <div>
+                <h4 class="nav-text">Your Names</h4>
+            </div>
+        </a>
+        <a href="/rankings/" class="link-no-style nav-item">
+            <div>
+                <h4 class="nav-text">Rankings</h4>
+            </div>
+        </a>
+    </nav>
+</header>
 <main>
-
-</main>
-<section id="generated-name-section">
-    <div id="generated-name-title-div">
-        <h2 id="generated-name-text">Generated Name</h2>
-    </div>
-    <section id="generated-names-section">
+    <section id="generate-name-section">
+        <div id="generated-name-title-div">
+            <!--        <h2 id="generated-name-text">Generated Name</h2>-->
+        </div>
+        <section id="generated-names-section">
+            <div class="generated-name-bubble">
+                <div class="generated-name-bubble-text-div">
+                    <h4 class="generated-name-bubble-text">Marques <br> Boham</h4>
+                </div>
+                <div class="generated-name-save-button tiny-button">
+                    <h5>Save</h5>
+                </div>
+            </div>
+        </section>
+        <div id="generate-name-button-div" class="large-button">
+            <h3 id="generate-name-button">Generate</h3>
+        </div>
+        <div id="loading-wheel-div">
+            <img id="loading-wheel-img" src="../static/images/loading_wheel.gif" alt="loading wheel"
+                 th:src="@{/images/loading_wheel.gif}">
+        </div>
+    </section>
+    <section id="name-info-popup-section">
 
     </section>
-    <div id="generate-name-button-div" class="medium-button">
-        <h4 id="generate-name-button">Generate</h4>
-    </div>
-    <div id="loading-wheel-div">
-        <img id="loading-wheel-img" src="../static/images/loading_wheel.gif" alt="loading wheel"
-             th:src="@{/images/loading_wheel.gif}">
-    </div>
-</section>
-<section id="generator-settings">
+</main>
+<!-- TODO: On mobile, add shake to shuffle or random. -->
+<section id="generator-settings-section">
     <div id="generator-settings-title-div">
         <h3 id="generator-settings-title-text">Settings</h3>
     </div>
@@ -84,9 +113,15 @@
         </div>
     </div>
 </section>
-<script src="../static/script/globalScript.js" th:src="@{/script/globalScript.js}"></script>
-<script src="../static/script/generatorScript.js"
-        type="module"
-        th:src="@{/script/generatorScript.js}"></script>
+<footer>
+    <div>
+        <h5>&copy 2024 Sigwarth Software</h5>
+    </div>
+    <div>
+        <h5>Terms of Service</h5>
+    </div>
+</footer>
+<script src="../static/script/bundle.js" type="application/javascript"
+        th:src="@{/script/bundle.js}"></script>
 </body>
 </html>
