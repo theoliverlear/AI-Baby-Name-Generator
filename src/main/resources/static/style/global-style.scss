@@ -112,7 +112,14 @@ header {
 .medium-button {
     @extend .button;
 }
-
+.large-button {
+    @extend .button;
+    padding: $one-percent;
+}
+.tiny-button {
+    @extend .button;
+    padding: $eighth-percent;
+}
 hr {
     border: $bronze solid $thinnest-border;
     box-shadow: $soft-bronze $quarter-percent $quarter-percent 0 0;
