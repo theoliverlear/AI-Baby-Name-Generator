@@ -10,3 +10,5 @@ function disableDraggableImages(): void {
 function loadPage(bodyElement: HTMLElement, pageName: string): boolean {
     return bodyElement.getAttribute('data-page') === pageName;
 }
+disableDraggableImages();
+export { loadPage };
