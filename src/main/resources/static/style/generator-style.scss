@@ -1,34 +1,63 @@
 @import "global-variables";
+@import "global-mixins";
+@import "global-functions";
+@import "global-placeholders";
+@import "global-style";
+
 .name-input-div {
     margin: $one-percent 0;
     p {
         font-size: calc(((0.75vw + 0.75vh) / 2) + 6px);
     }
 }
-#generated-name-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 #loading-wheel-div {
     display: none;
     justify-content: center;
     align-items: center;
     width: $three-percent;
     height: $three-percent;
+    @include square-size($three-percent);
     > * {
-        width: $three-percent;
-        height: $three-percent;
+        @extend %fit-container;
     }
 }
-#generated-names-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    > * {
-        margin: $one-percent 0;
+#generate-name-section {
+    @include flex(center, center, column);
+
+    #generated-names-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        > * {
+            margin: $one-percent 0;
+        }
+
+        .generated-name-bubble {
+            @include flex(center, center, column);
+            width: $fourteen-percent;
+            height: $fourteen-percent;
+            background-image: $thought-bubble;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            .generated-name-bubble-text-div {
+                @include flex(center, center, column);
+                margin: 0 0 $quarter-percent 0;
+
+                .generated-name-bubble-text {
+                    color: $soft-grey;
+                    white-space: pre;
+                }
+            }
+
+            .generated-name-save-button {
+
+            }
+        }
     }
 }
 #nationality-example-text {
@@ -46,25 +75,7 @@
     border-radius: calc((5vh + 5vw) / 2);
     border: white solid calc((0.25vh + 0.25vw) / 2);
 }
-.generated-name-bubble {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    width: $fourteen-percent;
-    height: $fourteen-percent;
-    background-image: $thought-bubble;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    > * {
-        margin-bottom: $one-percent;
-    }
-    .generated-name-bubble-text {
-        color: $soft-grey;
-        white-space: pre;
-    }
-}
 
 @keyframes float {
     0%, 100% {
