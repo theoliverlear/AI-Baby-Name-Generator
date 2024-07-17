@@ -90,8 +90,32 @@ function hideElement(element: JQuery<HTMLElement>): void {
     element.hide();
 }
 
+let genderSelectorDropdown: JQuery<HTMLElement> = $('#gender-selector-dropdown');
+let genderItemDivs: JQuery<HTMLElement> = $('.gender-item-div');
+let genderChoiceText: JQuery<HTMLElement> = $('#gender-choice');
+let currentGenderChoice: string = 'Any';
+
+function toggleGenderSelectorOpening(): void {
+    if (genderSelectorDropdown.hasClass('opened-dropdown')) {
+        genderSelectorDropdown.addClass('closed-dropdown');
+    } else {
+        genderSelectorDropdown.removeClass('closed-dropdown');
+    }
+    if (!genderSelectorDropdown.hasClass('closed-dropdown')) {
+        genderSelectorDropdown.addClass('opened-dropdown');
+    } else {
+        genderSelectorDropdown.removeClass('opened-dropdown');
+    }
+}
+function selectGenderChoice() {
+    currentGenderChoice = $(this).find('.gender-item-text').text();
+    genderChoiceText.text(currentGenderChoice);
+}
+
 let shouldLoadPage: boolean = loadPage(document.body, 'generator');
 if (shouldLoadPage) {
     generateButton.on("click", generateNamesSequence);
     genderInputs.on("click", updateSelectedGender);
+    genderSelectorDropdown.on("click", toggleGenderSelectorOpening);
+    genderItemDivs.on("click", selectGenderChoice);
 }
