@@ -11,8 +11,13 @@ export class GeneratedName {
     }
     getHtmlString(): string {
         return `
-            <h4 class="generated-name-bubble-text">${this._generatedName}</h4>
-        `
+            <div class="generated-name-bubble-text-div">
+                <h4 class="generated-name-bubble-text">${this._generatedName}</h4>
+            </div>
+            <div class="generated-name-save-button tiny-button">
+                <h5>Save</h5>
+            </div>
+        `;
     }
     getHtml(): HTMLDivElement {
         let generatedNameBubble: HTMLDivElement = document.createElement('div');
