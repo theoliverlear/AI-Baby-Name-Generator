@@ -108,6 +108,15 @@ header {
         color: $pristine-white;
     }
 }
+input[type="text"] {
+    color: $pristine-white;
+    border: $bronze solid $thin-border;
+    box-shadow: $pure-brown $sixteenth-percent $sixteenth-percent 0 0;
+    background-color: $mahogany;
+    padding: $half-percent;
+    @extend %soft-border-curve;
+    text-align: center;
+}
 .medium-button {
     @extend .button;
 }
