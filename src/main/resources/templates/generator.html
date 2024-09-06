@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" dir="ltr"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>AI Baby Name Generator</title>
@@ -59,9 +60,10 @@
 </main>
 <!-- TODO: On mobile, add shake to shuffle or random. -->
 <section id="generator-settings-section">
-    <div id="generator-settings-title-div">
-        <h3 id="generator-settings-title-text">Settings</h3>
-    </div>
+
+    <!--    <div id="generator-settings-title-div">-->
+    <!--        <h3 id="generator-settings-title-text">Settings</h3>-->
+    <!--    </div>-->
     <div id="gender-selector-dropdown" class="closed-dropdown">
         <div id="gender-selector">
             <div id="gender-selector-title">
@@ -95,57 +97,75 @@
         </div>
         <!-- TODO: Other has an input field. -->
     </div>
-    <div id="generator-settings-input-div">
-        <div id="generator-gender-div" class="name-input-div">
-            <h5>Gender</h5>
-            <input class="gender-input" id="any" name="gender" type="radio" checked>
-            <label for="any">Any</label>
-            <input class="gender-input" id="boy" name="gender" type="radio">
-            <label for="boy">Boy</label>
-            <input class="gender-input" id="girl" name="gender" type="radio">
-            <label for="girl">Girl</label>
-            <input class="gender-input" id="unisex" name="gender" type="radio">
-            <label for="unisex">Unisex</label>
-            <input class="gender-input" id="non-binary" name="gender" type="radio">
-            <label for="non-binary">Non-Binary</label>
-            <input class="gender-input" id="other" name="gender" type="radio">
-            <label for="other">Other</label>
+    <div id="names-collection-div">
+        <div id="similar-names-div" class="name-collection-div">
+            <div class="name-collection-title-div">
+                <h4>Similar Names</h4>
+            </div>
+            <div class="name-collection-items-div">
+                <div class="name-collection-item">
+                    <h5 class="similar-name-text">Marques</h5>
+                </div>
+                <div class="name-collection-item">
+                    <h5 class="similar-name-text">Boham</h5>
+                </div>
+            </div>
         </div>
-        <div class="name-input-div">
-            <h5>Nationality</h5>
-            <p id="nationality-example-text">Ex. Spanish, American, South African, Irish American</p>
-            <input id="nationality-input" type="text">
+        <div id="dissimilar-names-div" class="name-collection-div">
+            <div class="name-collection-title-div">
+                <h4>Dissimilar Names</h4>
+            </div>
+            <div class="name-collection-items-div">
+                <div class="name-collection-item">
+                    <h5 class="dissimilar-name-text">Kyle</h5>
+                </div>
+                <div class="name-collection-item">
+                    <h5 class="dissimilar-name-text">Burnum</h5>
+                </div>
+            </div>
         </div>
-        <div class="name-input-div">
-            <h5>Similar names </h5>
-            <p>Separate by comma ","</p>
-            <input id="similar-names-input" type="text">
+    </div>
+    <div class="name-input-div">
+        <div>
+            <h5>Enter Name</h5>
         </div>
-        <div class="name-input-div">
-            <h5>Dissimilar Names</h5>
-            <p>Separate by comma ","</p>
-            <input id="dissimilar-names-input" type="text">
-        </div>
-        <div class="name-input-div">
-            <h5>Uniqueness</h5>
-            <input id="uniqueness-input" type="range" min="1" max="10">
-        </div>
-        <div class="name-input-div">
-            <h5>Complexity</h5>
-            <input id="complexity-input" type="range" min="1" max="10">
-        </div>
-        <div class="name-input-div">
-            <h5>Last Name</h5>
-            <input id="last-name-input" type="text">
-        </div>
-        <div class="name-input-div">
-            <h5>Number of Names</h5>
-            <input id="number-of-names-input" type="range" min="1" max="10">
-        </div>
-        <div class="name-input-div">
-            <h5>Length of Names</h5>
-            <input id="length-of-names-input" type="range" min="1" max="10">
-        </div>
+        <input id="name-input" type="text">
+    </div>
+    
+    <div class="name-input-div">
+        <h5>Nationality</h5>
+        <p id="nationality-example-text">Ex. Spanish, American, South African, Irish American</p>
+        <input id="nationality-input" type="text">
+    </div>
+    <div class="name-input-div">
+        <h5>Similar names </h5>
+        <p>Separate by comma ","</p>
+        <input id="similar-names-input" type="text">
+    </div>
+    <div class="name-input-div">
+        <h5>Dissimilar Names</h5>
+        <p>Separate by comma ","</p>
+        <input id="dissimilar-names-input" type="text">
+    </div>
+    <div class="name-input-div">
+        <h5>Uniqueness</h5>
+        <input id="uniqueness-input" type="range" min="1" max="10">
+    </div>
+    <div class="name-input-div">
+        <h5>Complexity</h5>
+        <input id="complexity-input" type="range" min="1" max="10">
+    </div>
+    <div class="name-input-div">
+        <h5>Last Name</h5>
+        <input id="last-name-input" type="text">
+    </div>
+    <div class="name-input-div">
+        <h5>Number of Names</h5>
+        <input id="number-of-names-input" type="range" min="1" max="10">
+    </div>
+    <div class="name-input-div">
+        <h5>Length of Names</h5>
+        <input id="length-of-names-input" type="range" min="1" max="10">
     </div>
 </section>
 <footer>
