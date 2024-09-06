@@ -63,7 +63,44 @@
 #nationality-example-text {
     font-size: calc(((0.75vw + 0.75vh) / 2) + 4px);
 }
+#generator-settings-section {
+    @include flex(center, center, column);
+    #names-collection-div {
 
+        padding: $half-percent;
+        @include flex(center, center, row);
+        @include size(100%, auto);
+        min-height: $five-percent;
+        background-color: $soft-bronze;
+        @extend %soft-border-curve;
+        border: $bronze solid $thin-border;
+
+
+        .name-collection-div {
+            @include flex(flex-start, center, column);
+            height: 100%;
+            width: $eighteen-percent;
+            padding: 0 $one-percent;
+            .name-collection-title-div {
+                background-color: $bronze;
+                padding: $half-percent;
+                @extend %soft-border-curve;
+                h4 {
+                    color: $pristine-white;
+                }
+            }
+            .name-collection-items-div {
+                margin-top: auto;
+                .name-collection-item {
+                    @extend .button;
+                }
+            }
+        }
+        #similar-names-div {
+            border-right: $bronze solid $thin-border;
+        }
+    }
+}
 #generated-name-div {
     background-color: #f1f1f1;
     padding: calc((1vh + 1vw) / 2);
